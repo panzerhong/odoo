@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="salon_booking_form" name="Salon Booking">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>$( function() {$( "#date" ).datepicker();} );</script>
+        <script>$( function() {$( "#check_date" ).datepicker();} );</script>
+        <t t-call="website.layout">
+            <div class="container">
+
+                <div class="row s_nb_column_fixed">
+
+                    <div class="col-lg-6 s_title pt16 pb16">
+                        <h3>
+                            Working Time
+                        </h3>
+                        <table border="1">
+                            <th>Day</th>
+                            <th>Starting Time</th>
+                            <th>Closing Time</th>
+                            <tbody>
+                                <t t-foreach="working_time" t-as="working_time_obj">
+                                    <tr>
+                                        <td>
+                                            <span t-field="working_time_obj.name" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="'%02d:%02d' % (int(working_time_obj.from_time), working_time_obj.from_time % 1 * 60)" />
+                                        </td>
+                                        <td>
+                                            <t t-esc="'%02d:%02d' % (int(working_time_obj.to_time), working_time_obj.to_time % 1 * 60)" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                        <hr/>
+                        <h3>
+                            Sport Service
+                        </h3>
+                        <table border="1">
+                            <th>Service Name</th>
+                            <th>Price</th>
+                            <th>Duration</th>
+                            <tbody>
+                                <t t-foreach="salon_service" t-as="salon_service_obj">
+                                    <tr>
+                                        <td>
+                                            <span t-field="salon_service_obj.name"/>.
+                                        </td>
+                                        <td>
+                                            <span>$</span>
+                                            <span t-field="salon_service_obj.price"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="'%d min' % (int(salon_service_obj.time_taken)*60 + (salon_service_obj.time_taken % 1 * 60))"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-6 s_title pt16 pb16">
+                        <h3>Book Your Court</h3>
+                        <form>
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-2 s_title pt16 pb16 field_booking_chair">
+                                    TIME *
+                                </div>
+                                <div class="col-lg-10 s_title pt16 pb16 row">
+                                    <div class="col-lg-4 s_title pt16 pb16">
+                                        <input type="text" id="date" placeholder="dd/mm/yyyy"
+                                               onkeyup="var v = this.value;if (v.match(/^\d{2}$/) !== null) {this.value = v + '/';} else if (v.match(/^\d{2}\/\d{2}$/) !== null) {this.value = v + '/';}"
+                                               maxlength="10"/>
+                                    </div>
+                                    <div class="col-lg-3 s_title pt16 pb16">
+                                        <input type="text" id="time" placeholder="HH:MM"
+                                               onkeyup="var v = this.value;if (v.match(/^\d{2}$/) !== null) {this.value = v + ':';}"
+                                               maxlength="5"/>
+                                    </div>
+                                    <div class="col-lg-3 s_title pt16 pb16" style="display:none">
+                                        <label for="birthdaytime">Birthday (date and time):</label>
+                                        <input type="datetime-local" id="date_time" name="birthdaytime"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-2 s_title pt16 pb16 field_booking_chair">
+                                    COURT*
+                                </div>
+                                <div class="col-lg-10 s_title pt16 pb16 row">
+                                    <div class="col-lg-5 s_title pt16 pb16">
+                                        <select id="chair" required="True">
+                                            <t t-foreach="chair_details" t-as="chair">
+                                                <option t-att-value="chair.id" t-esc="chair.name"/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 s_title pt16 pb16 field_booking_chair">
+                                    DURATION*
+                                </div>
+                                <div class="col-lg-10 s_title pt16 pb16 row">
+                                    <div class="col-lg-5 s_title pt16 pb16">
+                                        <select id="duration" required="True">
+                                            <t t-foreach="duration_details" t-as="duration">
+                                                <option t-att-value="duration.id" t-esc="duration.name"/>
+                                            </t>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-2 s_title pt16 pb16 field_booking_chair">
+                                    NAME*
+                                </div>
+                                <div class="col-lg-10 s_title pt16 pb16">
+                                    <input type="text" id="name" placeholder="Enter your Name"/>
+                                </div>
+                            </div>
+                            <div class="row s_nb_column_fixed">
+                                <div class="col-lg-2 s_title pt16 pb16 field_booking_chair">
+                                    PHONE*
+                                </div>
+                                <div class="col-lg-10 s_title pt16 pb16">
+                                    <input  style="width:100%" type="tel" id="phone" required="True" pattern="[7-9]{1}[0-9]{9}" 
+                                           placeholder="Enter your Phone number(eg:012 345 678)"/>
+                                </div>
+                            </div>
+                            <div class="row s_nb_column_fixed" t-if="booking_payment">
+                                <hr>
+                                <div class="text-center">
+                                    <h6>Please make the advanced payment at least 50% of total price by scanning the ABA QR Code or 
+                                    Transfer cash to the ABA account below and input the <b>Trx. ID</b> of the completed transaction </h6>
+                                </div>
+                                <div class="container">
+                                    <div class="row">  
+                                        <div class="col-sm">
+                                            <img class="img img-responsive" t-attf-src="data:image/jpg;base64,{{booking_payment.qr_code_booking_payment}}"/>
+                                        </div>
+                                        <div class="col-sm row align-items-center">
+                                            <span><b> ABA Account Number : </b> <span  class="tab"><t t-esc="booking_payment.aba_account_id" /></span></span>
+                                            <span><b> ABA Account Name : </b> <span class="tab"><t t-esc="booking_payment.aba_account_name" /></span> </span>
+                                        </div>
+                                    </div>
+                                    <div class="row s_nb_column_fixed">
+                                        <div class="col-lg-2 s_title pt16 pb16 field_booking_chair">
+                                            Trx. ID*
+                                        </div>
+                                        <div class="col-lg-10 s_title pt16 pb16">
+                                            <input  style="width:100%" type="tel" id="bank_trx_id" required="True" pattern="[7-9]{1}[0-9]{9}" 
+                                                placeholder="Enter ABA Trx. ID of completed transaction "/>
+                                        </div>
+                                    </div>
+                                </div>
+                                </hr>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" id="submit_button"
+                                        class="btn btn-primary btn-md o_website_form_send">Send
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <t t-call="sport_management.salon_booking_chair_details"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="salon_booking_chair_details" name="Chair Details">
+        <section id="chair_details">
+            <div class="container">
+                <hr/>
+                    <div class="row">
+                        <div class="col">
+                            <h5>Select Court Infor : </h5>
+                        </div>
+                        <div class="col">
+                            <select id="court_option_infor" required="True">
+                                <t t-foreach="court_option" t-as="option">
+                                    <option t-esc="option"/>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+                <hr/>
+                <div class="row s_nb_column_fixed">
+                    <div class="col-lg-12 s_title pt16 pb16">
+                        <div class="row">
+                            <div class="col-lg-5 s_title pt16 pb16">
+                                <div class="row">
+                                    <div class="col-lg-2 s_title pt16 pb16">
+                                        TIME :
+                                    </div>
+                                    <div class="col-lg-6 s_title pt16 pb16">
+                                        <input id="check_date" type="text" placeholder="Select a date"/>
+                                    </div>
+                                    <div class="col-lg-4 s_title pt16 pb16">
+                                        <button type="submit" id="check_button"
+                                                class="btn btn-primary btn-md o_website_form_send">Check
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 s_title pt16 pb16">
+                                <div class="col-lg-12 s_title pt16 pb16" id="searched_date">
+                                    DATE :
+                                    <t t-esc="date_search"/>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 s_title pt16 pb16 row">
+                                <div class="col-lg-4 s_title pt16 pb16">
+                                    HOLIDAYS :
+                                </div>
+                                <div t-foreach="holiday" t-as="holiday_obj" class="col-lg-2 s_title pt16 pb16">
+                                    <span t-field="holiday_obj.name"/>
+                                    <span>&amp;nbsp;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="booking_chair_div" class="col-lg-12 s_title pt16 pb16 row">
+                    <div t-foreach="chair_details" t-as="chair_obj" class="col-lg-4 s_title pt16 pb16">
+                        <div t-if="chair_obj.active_booking_chairs == 1">
+                            <div style="height: 200px!important; text-align: center; border: 1px solid #666;padding: 15px 0px;box-shadow: 7px 8px 5px #888888;background-color:#389D38;border-radius:10px;color:#fff;margin-bottom: 10px;">
+                                <span style="font-size: 15px;" t-field="chair_obj.name"/>
+                                <br/>
+                                <a style="color:white;font-size:15px;">Booked Details</a>
+                                <div id="style-2"
+                                     style="overflow-y:scroll;height:105px;padding-right:25px;padding-left:25px;margin-right:10px;">
+                                    <table class="table">
+                                        <th style="font-size:12px;color:#fff;">Booked No.</th>
+                                        <th style="font-size:12px;color:#fff;">Start Time</th>
+                                        <th style="font-size:12px;color:#fff;">End Time</th>
+                                        <div>
+                                            <tbody style="font-size:12px;color:#fff;">
+                                                <t t-foreach="order_details" t-as="order_obj">
+                                                    <t t-if="order_obj.chair_id.id == chair_obj.id">
+                                                        <tr>
+                                                            <td style="font-size:12px;color:#fff;">
+                                                                <span t-field="order_obj.id"/>
+                                                            </td>
+                                                            <td>
+                                                                <span t-esc="start_time_only_local_pp[order_obj.id]"/>
+                                                            </td>
+                                                            <td>
+                                                                <span t-esc="end_time_only_local_pp[order_obj.id]"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </t>
+                                            </tbody>
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </template>
+
+    <template id="salon_booking_thank_you" name="Thank you">
+        <t t-call="website.layout">
+            <form>
+                <div style="text-align: center;padding: 125px;">
+                    <div class="alert alert-success" role="alert">
+                        <h2>Thank you</h2>
+                        <br></br>
+                        <p>
+                            Your Booking is successsfully created<br></br>
+                            We will contact you shortly via phone number.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </t>
+    </template>
+
+    <template id="assets_frontend" name="salon website assets" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/sport_management/static/src/css/salon_website.css"/>
+        </xpath>
+    </template>
+
+
+</odoo>

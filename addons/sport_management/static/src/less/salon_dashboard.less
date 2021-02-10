@@ -1,0 +1,40 @@
+
+.o_kanban_view.o_kanban_dashboard.o_salon_kanban {
+
+  .o_kanban_record {
+    width: 180px;
+    height: 200px;
+    border-radius: 10px 10px 10px 10px;
+    background: #389D38;
+    background: linear-gradient(#389D38 0%, #389D38 63%, #0a5a0a 63%, #389D38 73%);
+    position: relative;
+    margin: 25px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px 3px #999999
+  }
+  .o_kanban_record:after, .o_kanban_record:before {
+    content: "";
+    display: block;
+    width: 33.3333333333px;
+    height: 111.1111111111px;
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    left: 185px;
+    top: 64px;
+  }
+  .o_kanban_record:before {
+    left: -20px;
+  }
+  .o_kanban_record:after {
+    right: -20px;
+  }
+  .o_kanban_record.notvacant {
+    background: #ccc;
+    background: linear-gradient(#ccc 0%, #ccc 70%, #000 70%, #ccc 77%);
+  }
+  .o_kanban_record.notvacant:before, .o_kanban_record.notvacant:after {
+    background: #ccc;
+  }
+
+}
