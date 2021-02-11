@@ -73,7 +73,7 @@ odoo.define('sport_management.website_salon_booking_system', function(require) {
                                 '</span></td><td><span>' + order_details[x]['orders'][i]['end_time_only'] + '</span></td></tr>'
                         }
                         order += '<div class="col-lg-4 s_title pt16 pb16 row"><div style="height: 200px!important; text-align: center;' +
-                            'border: 1px solid #666;padding: 15px 0px;box-shadow: 7px 8px 5px #888888;background-color:#389D38;border-radius:10px;color:#fff;margin-bottom: 10px;">' +
+                            'border: 1px solid #666;padding: 15px 0px;box-shadow: 7px 8px 5px #888888;background-color:#389D38;border-radius:10px;color:#fff;margin:0px 0px 10px 30px; ">' +
                             '<span style="font-size: 15px;">' + chair_name + '</span>' +
                             '<br/><a style="color:#fff;font-size:15px;">Booked Details</a>' +
                             '<div id="style-2" style="overflow-y:scroll;height:105px;padding-right:25px;padding-left:25px;margin-right:10px;">' +
@@ -110,7 +110,7 @@ odoo.define('sport_management.website_salon_booking_system', function(require) {
                                 '</span></td><td><span>' + order_details[x]['orders'][i]['end_time_only'] + '</span></td></tr>'
                         }
                         order += '<div class="col-lg-4 s_title pt16 pb16 row"><div style="height: 200px!important; text-align: center;' +
-                            'border: 1px solid #666;padding: 15px 0px;box-shadow: 7px 8px 5px #888888;background-color:#389D38;border-radius:10px;color:#fff;margin-bottom: 10px;">' +
+                            'border: 1px solid #666;padding: 15px 0px;box-shadow: 7px 8px 5px #888888;background-color:#389D38;border-radius:10px;color:#fff;margin:0px 0px 10px 30px;">' +
                             '<span style="font-size: 15px;">' + chair_name + '</span>' +
                             '<br/><a style="color:#fff;font-size:15px;">Available Details</a>' +
                             '<div id="style-2" style="overflow-y:scroll;height:105px;padding-right:25px;padding-left:25px;margin-right:10px;">' +
