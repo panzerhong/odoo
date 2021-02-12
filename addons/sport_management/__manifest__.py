@@ -11,8 +11,7 @@
     'version': '14.0.1.0.0',
     'author': 'Hong Tean (A2A Digital)',
     'website': "https://a2a-digital.com/",
-    'company': 'A2A Digital',
-    'email': 'a2adigital-supportdesk@kit.edu.kh', 
+    'company': 'A2A Digital', 
     "category": "Industries",
     'depends': ['base','base_setup', 'account', 'mail', 'website'],
     'data': [
