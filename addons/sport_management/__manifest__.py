@@ -12,6 +12,7 @@
     'author': 'Hong Tean (A2A Digital)',
     'website': "https://a2a-digital.com/",
     'company': 'A2A Digital',
+    'email': 'a2adigital-supportdesk@kit.edu.kh', 
     "category": "Industries",
     'depends': ['base','base_setup', 'account', 'mail', 'website'],
     'data': [
