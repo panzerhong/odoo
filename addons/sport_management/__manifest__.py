@@ -37,7 +37,7 @@
              ],
     'images': ['static/description/banner.jpg'],
     # Module Price
-    'price':130.00,
+    'price':230.00,
     # Module Currency Price
     'currency':'USD',
     'license': 'OPL-1',
