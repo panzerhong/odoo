@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2017-07-18 12:15+0000\n"
+"PO-Revision-Date: 2016-06-22 07:32+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Catalan (http://www.transifex.com/odoo/odoo-8/language/ca/)\n"
 "MIME-Version: 1.0\n"
@@ -80,7 +80,7 @@ msgstr "Cancel·la"
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
 msgid "Cancel Procurement"
-msgstr "Cancel·lar abastiment"
+msgstr ""
 
 #. module: procurement
 #: selection:procurement.order,state:0
@@ -96,7 +96,7 @@ msgstr ""
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
 msgid "Check Procurement"
-msgstr "Comprar abastiment"
+msgstr ""
 
 #. module: procurement
 #: help:procurement.order,rule_id:0
@@ -104,7 +104,7 @@ msgid ""
 "Chosen rule for the procurement resolution. Usually chosen by the system but"
 " can be manually set by the procurement manager to force an unusual "
 "behavior."
-msgstr "Regla escollida per la resolució d'abastiment. Normalment escollida pel sistema, pot ser establerta manualment pel gestor dels abastiments per forçar un comportament no habitual."
+msgstr ""
 
 #. module: procurement
 #: field:procurement.order,company_id:0 field:procurement.rule,company_id:0
@@ -114,7 +114,7 @@ msgstr "Companyia"
 #. module: procurement
 #: view:procurement.order.compute.all:procurement.view_compute_schedulers_wizard
 msgid "Compute all procurements in the background."
-msgstr "Calcular tots els planificadors"
+msgstr ""
 
 #. module: procurement
 #: model:ir.model,name:procurement.model_procurement_order_compute_all
@@ -173,7 +173,7 @@ msgstr "Excepcions"
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
 msgid "External note..."
-msgstr "Nota externa..."
+msgstr ""
 
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
@@ -188,7 +188,7 @@ msgstr "Fix"
 #. module: procurement
 #: field:procurement.rule,group_id:0
 msgid "Fixed Procurement Group"
-msgstr "Grup d'abastiment fix"
+msgstr ""
 
 #. module: procurement
 #: field:procurement.order,message_follower_ids:0
@@ -209,7 +209,7 @@ msgstr "Agrupa per"
 #: model:ir.actions.act_window,name:procurement.do_view_procurements
 #: view:procurement.order:procurement.procurement_form_view
 msgid "Group's Procurements"
-msgstr "Abastiment del grup"
+msgstr ""
 
 #. module: procurement
 #: help:procurement.order,message_summary:0
@@ -272,7 +272,7 @@ msgstr "Retardat"
 #. module: procurement
 #: selection:procurement.rule,group_propagation_option:0
 msgid "Leave Empty"
-msgstr "Deixar buit"
+msgstr ""
 
 #. module: procurement
 #: view:res.company:procurement.mrp_company
@@ -298,7 +298,7 @@ msgstr "Nom"
 #: code:addons/procurement/procurement.py:212
 #, python-format
 msgid "No rule matching this procurement"
-msgstr "Cap norma que coincideixi amb aquest abastiment"
+msgstr ""
 
 #. module: procurement
 #: selection:procurement.order,priority:0
@@ -371,7 +371,7 @@ msgstr "Grup d'abastiment"
 #. module: procurement
 #: view:procurement.order:procurement.view_procurement_filter
 msgid "Procurement started late"
-msgstr "L'abastiment s'ha iniciat amb retard"
+msgstr ""
 
 #. module: procurement
 #: model:ir.actions.act_window,name:procurement.procurement_exceptions
@@ -399,17 +399,17 @@ msgstr "UdV del producte"
 #. module: procurement
 #: selection:procurement.rule,group_propagation_option:0
 msgid "Propagate"
-msgstr "Propagar"
+msgstr ""
 
 #. module: procurement
 #: view:procurement.rule:procurement.view_procurement_rule_form
 msgid "Propagation Options"
-msgstr "Opcions de propagació"
+msgstr ""
 
 #. module: procurement
 #: field:procurement.rule,group_propagation_option:0
 msgid "Propagation of Procurement Group"
-msgstr "Propagació del grup d'abastiment"
+msgstr ""
 
 #. module: procurement
 #: view:procurement.rule:procurement.view_procurement_rule_form
@@ -429,7 +429,7 @@ msgstr "Quantitat"
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
 msgid "Reconfirm Procurement"
-msgstr "Reconfirmar abastiment"
+msgstr ""
 
 #. module: procurement
 #: field:procurement.group,name:0
@@ -446,7 +446,7 @@ msgstr ""
 #. module: procurement
 #: field:procurement.order,rule_id:0
 msgid "Rule"
-msgstr "Regla"
+msgstr ""
 
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
@@ -513,7 +513,7 @@ msgstr "Resum"
 #. module: procurement
 #: help:procurement.rule,name:0
 msgid "This field will fill the packing origin and the name of its moves"
-msgstr "Aquest camp emplenarà el paquet d'origen i el nom dels seus moviments"
+msgstr ""
 
 #. module: procurement
 #: view:procurement.order:procurement.procurement_tree_view
@@ -543,7 +543,7 @@ msgstr "Molt urgent"
 #. module: procurement
 #: view:procurement.order:procurement.procurement_form_view
 msgid "e.g. SO005"
-msgstr "Per exemple, SO005"
+msgstr ""
 
 #. module: procurement
 #: view:procurement.order.compute.all:procurement.view_compute_schedulers_wizard

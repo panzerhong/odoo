@@ -32,7 +32,7 @@
         <report 
             id="account_invoices"
             model="account.invoice"
-            string="Invoices"
+            string="Receipt"
             report_type="qweb-pdf"
             name="account.report_invoice"
             file="account.report_invoice"

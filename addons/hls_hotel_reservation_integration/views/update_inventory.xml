@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_update_inventory_form">
+            <field name="name">hls.inventory.form</field>
+            <field name="model">hls.inventory</field>
+            <field name="arch" type="xml">
+                <form string="Update Inventory">
+                    <group col="4">
+                        <field name="start_date" required="1"/>
+                        <field name="end_date" required="1"/>
+                    </group>
+                    <footer>
+                        <button name="update_inventory" string="Update" type="object"
+                                class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="hls_update_inventory_action">
+            <field name="name">Update Inventory HLS</field>
+            <field name="res_model">hls.inventory</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="update_inventory_hls" name="Hotel Link Solutions"
+                  sequence="20" parent="hotel.hotel_management_menu"/>
+        <menuitem
+                id="update_inventory"
+                parent="update_inventory_hls"
+                action="hls_update_inventory_action"
+        />
+    </data>
+</openerp>

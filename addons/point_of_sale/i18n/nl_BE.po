@@ -3,7 +3,6 @@
 # * point_of_sale
 # 
 # Translators:
-# Eric Geens <ericgeens@yahoo.com>, 2015
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 # Yenthe Van Ginneken <yenthespam@gmail.com>, 2015
 msgid ""
@@ -11,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2017-09-23 21:12+0000\n"
-"Last-Translator: Eric Geens <ericgeens@yahoo.com>\n"
+"PO-Revision-Date: 2015-07-30 14:36+0000\n"
+"Last-Translator: Yenthe Van Ginneken <yenthespam@gmail.com>\n"
 "Language-Team: Dutch (Belgium) (http://www.transifex.com/odoo/odoo-8/language/nl_BE/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,7 +47,7 @@ msgstr "(bijwerken)"
 #. module: point_of_sale
 #: view:pos.session.opening:point_of_sale.pos_session_opening_form_view
 msgid ") is \""
-msgstr ") is \""
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.session:point_of_sale.view_pos_session_form
@@ -67,7 +66,7 @@ msgstr "--------------------------------"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:844
 #, python-format
 msgid "1.54€ Lemon"
-msgstr "1.54€ Citroen"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -79,38 +78,38 @@ msgstr "123.14 €"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.lays_pickles_250g_product_template
 msgid "250g Lays Pickels"
-msgstr "250g Lays Pickels"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.evian_2l_product_template
 msgid "2L Evian"
-msgstr "2L Evian"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/pos.xml:843
 #, python-format
 msgid "3.141Kg Oranges"
-msgstr "3.141Kg Sinaasappelen"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.perrier_50cl_product_template
 msgid "50cl Perrier"
-msgstr "50cl Perrier"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/pos.xml:77
 #, python-format
 msgid "<!--[if IE]>"
-msgstr "<!--[if IE]>"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/pos.xml:90
 #, python-format
 msgid "<![endif]-->"
-msgstr "<![endif]-->"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,help:point_of_sale.product_template_action
@@ -243,7 +242,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/xml/pos.xml:1142
 #, python-format
 msgid "ABC"
-msgstr "ABC"
+msgstr ""
 
 #. module: point_of_sale
 #: view:website:point_of_sale.report_sessionsummary
@@ -290,7 +289,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:point_of_sale.action_pos_session
 #: model:ir.ui.menu,name:point_of_sale.menu_pos_session_all
 msgid "All Sessions"
-msgstr "Alle sessies"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,name:point_of_sale.action_pos_all_sales_lines
@@ -332,7 +331,7 @@ msgstr ""
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.pomme
 msgid "Apples"
-msgstr "Appels"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.ean_wizard:point_of_sale.pos_ean13_generator
@@ -354,7 +353,7 @@ msgstr ""
 #: view:pos.config:point_of_sale.view_pos_config_form
 #: field:pos.config,journal_ids:0 field:pos.session,journal_ids:0
 msgid "Available Payment Methods"
-msgstr "Beschikbare betalingsmethoden"
+msgstr ""
 
 #. module: point_of_sale
 #: field:product.template,available_in_pos:0
@@ -388,7 +387,7 @@ msgstr "Rekeninguittreksellijn"
 #. module: point_of_sale
 #: help:res.users,ean13:0
 msgid "BarCode"
-msgstr "Streepjescode"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -410,7 +409,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/xml/pos.xml:836
 #, python-format
 msgid "Barcode Scanner"
-msgstr "Streepjescodescanner"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.config:point_of_sale.view_pos_config_form
@@ -430,7 +429,7 @@ msgstr "Belle-Vue Kriek 25cl"
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.rouges_noyau_fruits
 msgid "Berries"
-msgstr "Bessen"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.beverage
@@ -440,7 +439,7 @@ msgstr "Dranken"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.raisins_noir_product_template
 msgid "Black Grapes"
-msgstr "Blauwe druiven"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.boni_orange_product_template
@@ -462,7 +461,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/xml/pos.xml:616
 #, python-format
 msgid "CHANGE"
-msgstr "WISSEL"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -493,7 +492,7 @@ msgstr ""
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.carotte_product_template
 msgid "Carrots"
-msgstr "Wortelen"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -588,7 +587,7 @@ msgstr "Chaudfontaine Petillante 1.5l"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.chaudfontaine_petillante_33cl_product_template
 msgid "Chaudfontaine Petillante 33cl"
-msgstr "Chaudfontaine bruisend 33cl"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.chaudfontaine_petillante_50cl_product_template
@@ -666,7 +665,7 @@ msgstr "Chimay Bleu 75cl"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.chimay_rouge_33cl_product_template
 msgid "Chimay Red 33cl"
-msgstr "Chimay Rood 33cl"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.chips
@@ -766,7 +765,7 @@ msgstr "Coca-Cola Light 33cl"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.coca_light_decaf_33cl_product_template
 msgid "Coca-Cola Light 33cl Decaf"
-msgstr "Coca-Cola Light 33cl Decaf"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.coca_light_50cl_product_template
@@ -821,7 +820,7 @@ msgstr "Coca-Cola Zero 2L"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.coca_zero_33cl_product_template
 msgid "Coca-Cola Zero 33cl"
-msgstr "Coca-Cola Zero 33cl"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.coca_zero_50cl_product_template
@@ -857,7 +856,7 @@ msgstr "Computers"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.poire_conference_product_template
 msgid "Conference pears"
-msgstr "Conference peren"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.ui.menu,name:point_of_sale.menu_point_config_product
@@ -939,12 +938,12 @@ msgstr "Creatiedatum"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.croky_bolognaise_250g_product_template
 msgid "Croky Bolognese 250g"
-msgstr "Croky Bolognese 250g"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.croky_naturel_45g_product_template
 msgid "Croky Natural 45g"
-msgstr "Croky Naturel 45g"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.croky_paprika_45g_product_template
@@ -967,7 +966,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/xml/pos.xml:839
 #, python-format
 msgid "Custom Ean13"
-msgstr "Aangepaste Ean13"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.order:point_of_sale.view_pos_order_filter
@@ -1147,14 +1146,14 @@ msgstr "Kortingsbericht"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:983
 #, python-format
 msgid "Discount:"
-msgstr "Korting:"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/pos.xml:625
 #, python-format
 msgid "Discounts"
-msgstr "Kortingen"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.open.statement:point_of_sale.view_pos_open_statement
@@ -1224,7 +1223,7 @@ msgstr "Dr. Oetker Ristorante Tonno"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.oetker_vegetale_product_template
 msgid "Dr. Oetker Ristorante Vegetable"
-msgstr "Dr. Oetker Ristorante Vegetable"
+msgstr ""
 
 #. module: point_of_sale
 #: field:res.users,ean13:0
@@ -1288,12 +1287,12 @@ msgstr ""
 #. module: point_of_sale
 #: help:pos.config,iface_electronic_scale:0
 msgid "Enables Electronic Scale integration"
-msgstr "Maakt integratie met electronische weegschaal mogelijk"
+msgstr ""
 
 #. module: point_of_sale
 #: help:pos.config,iface_payment_terminal:0
 msgid "Enables Payment Terminal integration"
-msgstr "Maakt integratie met een betaalterminal mogelijk"
+msgstr ""
 
 #. module: point_of_sale
 #: help:pos.config,iface_vkeyboard:0
@@ -1403,7 +1402,7 @@ msgstr "Evian 50cl"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.chicon_flandria_extra_product_template
 msgid "Extra Flandria chicory"
-msgstr "Extra Flandria witloof"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.order:point_of_sale.view_pos_pos_form
@@ -1448,7 +1447,7 @@ msgstr "Mogelijkheden"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.fenouil_fenouil_product_template
 msgid "Fennel"
-msgstr "Venkel"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.food
@@ -1522,17 +1521,17 @@ msgstr "Granny Smith appels"
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.raisins
 msgid "Grapes"
-msgstr "Druiven"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.poivron_verts_product_template
 msgid "Green Peppers"
-msgstr "Groene paprika's"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.grisette_cerise_25cl_product_template
 msgid "Grisette Cherry 25cl"
-msgstr "Grisette Cherry 25cl"
+msgstr ""
 
 #. module: point_of_sale
 #: view:account.bank.statement:point_of_sale.view_pos_confirm_cash_statement_filter
@@ -1570,7 +1569,7 @@ msgstr ""
 #. module: point_of_sale
 #: field:pos.session,cash_control:0
 msgid "Has Cash Control"
-msgstr "Heeft kascontrole"
+msgstr ""
 
 #. module: point_of_sale
 #: field:pos.category,id:0 field:pos.config,id:0 field:pos.confirm,id:0
@@ -1608,12 +1607,12 @@ msgstr "Ijsboerke Mocha 2.5L"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.ijsboerke_stracciatella_2,5l_product_template
 msgid "IJsboerke Stracciatella 2.5L"
-msgstr "IJsboerke Stracciatella 2.5L"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.ijsboerke_vanille_2,5l_product_template
 msgid "IJsboerke Vanilla 2.5L"
-msgstr "IJsboerke Vanille 2.5L"
+msgstr ""
 
 #. module: point_of_sale
 #: field:pos.config,proxy_ip:0
@@ -1633,7 +1632,7 @@ msgstr "Afbeelding"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.tomate_en_grappe_product_template
 msgid "In Cluster Tomatoes"
-msgstr "Tomaten in bulk"
+msgstr ""
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:134
@@ -1664,7 +1663,7 @@ msgstr "Interne notities"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:846
 #, python-format
 msgid "Invalid Ean"
-msgstr "Ongeldig Ean"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.actions.report.xml,name:point_of_sale.pos_invoice_report
@@ -1796,12 +1795,12 @@ msgstr "Lays Paprika XXL 300g"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.lays_poivre_sel_oven_150g_product_template
 msgid "Lays Salt and Pepper Oven Baked 150g"
-msgstr "Lays Salt and Pepper Oven Baked 150g"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.poireaux_poireaux_product_template
 msgid "Leeks"
-msgstr "Prei"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.leffe_blonde_33cl_product_template
@@ -1821,7 +1820,7 @@ msgstr "Leffe Bruin 33cl"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.citron_product_template
 msgid "Lemon"
-msgstr "Citroen"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.lindemans_kriek_37,5cl_product_template
@@ -1831,7 +1830,7 @@ msgstr "Lindemans Kriek 37.5cl"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.lindemans_pecheresse_37,,5cl_product_template
 msgid "Lindemans sinful 37.5cl"
-msgstr "Lindemans sinful 37.5cl"
+msgstr ""
 
 #. module: point_of_sale
 #: field:pos.order.line,name:0
@@ -1929,7 +1928,7 @@ msgstr "Maand van besteldatum"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:95
 #, python-format
 msgid "Mozilla Firefox"
-msgstr "Mozilla Firefox"
+msgstr ""
 
 #. module: point_of_sale
 #: view:report.pos.order:point_of_sale.view_report_pos_order_search
@@ -1943,7 +1942,7 @@ msgstr "Mijn verkopen"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:405
 #, python-format
 msgid "N/A"
-msgstr "N.V.T."
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -1970,7 +1969,7 @@ msgstr ""
 #. module: point_of_sale
 #: view:website:point_of_sale.report_payment
 msgid "Net Total"
-msgstr "Netto totaal"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.order:point_of_sale.view_pos_order_filter
@@ -1981,7 +1980,7 @@ msgstr "Nieuw"
 #. module: point_of_sale
 #: view:pos.session.opening:point_of_sale.pos_session_opening_form_view
 msgid "New Session"
-msgstr "Nieuwe sessie"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2050,14 +2049,14 @@ msgstr "Aantal transacties"
 #. module: point_of_sale
 #: view:website:point_of_sale.index
 msgid "Odoo POS"
-msgstr "Odoo POS"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/js/widgets.js:899
 #, python-format
 msgid "Offline"
-msgstr "Offline"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2072,12 +2071,12 @@ msgstr "OK"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.Onions_product_template
 msgid "Onions"
-msgstr "Uien"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.oignons_ail_echalotes
 msgid "Onions / Garlic / Shallots"
-msgstr "Uien / Look / Sjalotten"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2175,7 +2174,7 @@ msgstr ""
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.oranges
 msgid "Oranges"
-msgstr "Sinaasappelen"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.orangina_1,5l_product_template
@@ -2256,27 +2255,27 @@ msgstr ""
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.orval_33cl_product_template
 msgid "Orval 33cl"
-msgstr "Orval 33cl"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.autres_agrumes
 msgid "Other Citrus"
-msgstr "Andere citrusvruchten"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.autres_legumes_frais
 msgid "Other fresh vegetables"
-msgstr "Andere verse groenten"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.lays_naturel_oven_150g_product_template
 msgid "Oven Baked Lays Natural 150g"
-msgstr "Oven Baked Lays Naturel 150g"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.lays_paprika_oven_150g_product_template
 msgid "Oven Baked Lays Paprika 150g"
-msgstr "Oven Baked Lays Paprika 150g"
+msgstr ""
 
 #. module: point_of_sale
 #: view:report.sales.by.user.pos:point_of_sale.view_report_sales_by_user_pos_form
@@ -2395,7 +2394,7 @@ msgstr "Betaalreferentie"
 #. module: point_of_sale
 #: field:pos.config,iface_payment_terminal:0
 msgid "Payment Terminal"
-msgstr "Betaalterminal"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.order:point_of_sale.view_pos_pos_form
@@ -2406,17 +2405,17 @@ msgstr "Betalingen"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.nectarine_product_template
 msgid "Peach"
-msgstr "Perzik"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.peche_product_template
 msgid "Peaches"
-msgstr "Perziken"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.poire
 msgid "Pears"
-msgstr "Peren"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2499,7 +2498,7 @@ msgstr "Picking"
 #. module: point_of_sale
 #: field:pos.config,picking_type_id:0 field:pos.order,picking_type_id:0
 msgid "Picking Type"
-msgstr "Type levering"
+msgstr ""
 
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.pils
@@ -2662,7 +2661,7 @@ msgstr "Verkooppuntboekingen definitief maken"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:324
 #, python-format
 msgid "Postcode"
-msgstr "Postcode"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.order:point_of_sale.view_pos_order_filter
@@ -2674,7 +2673,7 @@ msgstr "Geboekt"
 #: model:pos.category,name:point_of_sale.pommes_de_terre
 #: model:product.template,name:point_of_sale.pomme_de_terre_product_template
 msgid "Potatoes"
-msgstr "Aardappelen"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2737,7 +2736,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/js/widgets.js:888
 #, python-format
 msgid "Printer"
-msgstr "Printer"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2874,12 +2873,12 @@ msgstr ""
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.poivron_rouges_product_template
 msgid "Red Pepper"
-msgstr "Rode paprika's"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.pamplemousse_rouge_pamplemousse_product_template
 msgid "Red grapefruit"
-msgstr "Rode pompelmoes"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -2919,7 +2918,7 @@ msgstr "Verantwoordelijke"
 #. module: point_of_sale
 #: view:pos.session.opening:point_of_sale.pos_session_opening_form_view
 msgid "Resume Session"
-msgstr "Sessie hervatten"
+msgstr ""
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:926
@@ -2936,7 +2935,7 @@ msgstr "Rochefort \"8\" 33cl"
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.legumes_racine
 msgid "Root vegetables"
-msgstr "Knolgewassen"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,name:point_of_sale.action_report_pos_details
@@ -3048,7 +3047,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/js/widgets.js:879
 #, python-format
 msgid "Scanner"
-msgstr "Scanner"
+msgstr ""
 
 #. module: point_of_sale
 #: view:account.bank.statement:point_of_sale.view_pos_confirm_cash_statement_filter
@@ -3126,7 +3125,7 @@ msgstr ""
 #: field:pos.order,session_id:0
 #, python-format
 msgid "Session"
-msgstr "Sessie"
+msgstr ""
 
 #. module: point_of_sale
 #: field:pos.session,name:0
@@ -3151,13 +3150,13 @@ msgstr ""
 #. module: point_of_sale
 #: view:pos.session:point_of_sale.view_pos_session_form
 msgid "Session:"
-msgstr "Sessie:"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,name:point_of_sale.act_pos_config_sessions
 #: field:pos.config,session_ids:0
 msgid "Sessions"
-msgstr "Sessies"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -3245,7 +3244,7 @@ msgstr "Soda"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:842
 #, python-format
 msgid "Soda 33cl"
-msgstr "Frisdrank 33cl"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.spa_gazeuse_1,5l_product_template
@@ -3265,7 +3264,7 @@ msgstr "Spa Barisart 50cl"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.spa_et_fruit_50cl_product_template
 msgid "Spa Fruit and Orange 50cl"
-msgstr "Spa Fruit en Sinaasappel 50cl"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.spa_1l_product_template
@@ -3373,7 +3372,7 @@ msgstr "Stella Artois 50cl"
 #. module: point_of_sale
 #: field:pos.config,stock_location_id:0
 msgid "Stock Location"
-msgstr "Voorraadlocatie"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -3438,7 +3437,7 @@ msgstr "Gesynchroniseerd"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:600
 #, python-format
 msgid "TOTAL"
-msgstr "TOTAAL"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.session:point_of_sale.view_pos_session_form
@@ -3486,7 +3485,7 @@ msgstr "Btw:"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:524
 #, python-format
 msgid "Tel:"
-msgstr "Tel:"
+msgstr ""
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:1121
@@ -3594,7 +3593,7 @@ msgstr ""
 #. module: point_of_sale
 #: view:pos.session.opening:point_of_sale.pos_session_opening_form_view
 msgid "The session"
-msgstr "De sessie"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.open.statement:point_of_sale.view_pos_open_statement
@@ -3753,7 +3752,7 @@ msgstr ""
 #. module: point_of_sale
 #: model:pos.category,name:point_of_sale.tomates
 msgid "Tomatos"
-msgstr "Tomaten"
+msgstr ""
 
 #. module: point_of_sale
 #: field:pos.order,amount_total:0
@@ -3883,7 +3882,7 @@ msgstr "Eenheidsprijs"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:686
 #, python-format
 msgid "Unknown Barcode"
-msgstr "Onbekende streepjescode"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -4012,7 +4011,7 @@ msgstr "Jaar"
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.poivron_jaunes_product_template
 msgid "Yellow Peppers"
-msgstr "Gele paprika's"
+msgstr ""
 
 #. module: point_of_sale
 #: view:pos.session.opening:point_of_sale.pos_session_opening_form_view
@@ -4170,12 +4169,12 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/xml/pos.xml:325
 #, python-format
 msgid "ZIP"
-msgstr "Postcode"
+msgstr ""
 
 #. module: point_of_sale
 #: model:product.template,name:point_of_sale.courgette_product_template
 msgid "Zucchini"
-msgstr "Courgetten"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -4189,7 +4188,7 @@ msgstr "bij"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:1078
 #, python-format
 msgid "caps lock"
-msgstr "hoofdletters vergr."
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -4197,7 +4196,7 @@ msgstr "hoofdletters vergr."
 #: code:addons/point_of_sale/static/src/xml/pos.xml:1147
 #, python-format
 msgid "close"
-msgstr "sluiten"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -4205,21 +4204,21 @@ msgstr "sluiten"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:1140
 #, python-format
 msgid "delete"
-msgstr "verwijderen"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/pos.xml:788
 #, python-format
 msgid "discount"
-msgstr "korting"
+msgstr ""
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:398
 #: code:addons/point_of_sale/point_of_sale.py:593
 #, python-format
 msgid "error!"
-msgstr "fout!"
+msgstr ""
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/point_of_sale.py:140
@@ -4243,7 +4242,7 @@ msgstr "of"
 #. module: point_of_sale
 #: view:pos.session:point_of_sale.view_pos_session_form
 msgid "payment method."
-msgstr "betalingsmethode."
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Template for hotel reservation -->
+        <template id="report_maxroom_qweb">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="row">
+                                <h2>
+                                    <span>
+                                        <center>Max Room Used List</center>
+                                    </span>
+                                </h2>
+                            </div>
+                            <table class="table table-condensed">
+                                <tr class="row mt32 mb32">
+                                    <div class="text-right">
+                                        <strong>From:</strong>
+                                        <span t-esc="formatLang(data['form']['date_start'],date=True)" />
+                                        <strong>To:</strong>
+                                        <span t-esc="formatLang(data['form']['date_end'],date=True)" />
+                                    </div>
+                                </tr>
+                                <tr style="border: 1px solid black">
+                                    <td style="border: 1px solid black;">
+                                        <strong>No</strong>
+                                    </td>
+                                    <td style="border: 1px solid black">
+                                        <strong>Room No</strong>
+                                    </td>
+                                    <td style="border: 1px solid black">
+                                        <strong>No of Times Used</strong>
+                                    </td>
+                                </tr>
+                                <t t-set="n" t-value="0"/>
+                                <tr style="border: 1px solid black"
+                                    t-foreach="get_room_used_detail(data['form']['date_start'],data['form']['date_end'])"
+                                    t-as="info">
+                                    <td style="border: 1px solid black">
+                                        <t t-set="n" t-value="n + 1"/>
+                                        <span t-esc="n"/>
+                                    </td>
+                                    <td style="border: 1px solid black">
+                                        <span t-esc="info.get('name')" />
+                                    </td>
+                                    <td style="border: 1px solid black">
+                                        <span t-esc="info.get('no_of_times_used')" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

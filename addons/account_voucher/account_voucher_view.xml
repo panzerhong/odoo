@@ -8,7 +8,7 @@
                 <tree colors="blue:state == 'draft';gray:state == 'cancel';red:audit" string="Voucher Entries">
                     <field name="date"/>
                     <field name="number"/>
-                    <field name="reference"/>
+                    <field name="reference" invisible="1"/>
                     <field name="partner_id"/>
                     <field name="journal_id" groups="account.group_account_user"/>
                     <field name="period_id" invisible="context.get('visible', True)"/>
@@ -72,9 +72,9 @@
                         <field name="date" on_change="onchange_date(date, currency_id, payment_rate_currency_id, amount, company_id)"/>
                         <field name="journal_id" widget="selection" on_change="onchange_journal_voucher(line_ids, tax_id, amount, partner_id, journal_id, type)"/>
                         <field name="type" required="1"/>
-                        <field name="name" colspan="2"/>
+                        <field name="name" colspan="2" invisible="1"/>
                         <field name="company_id" widget="selection" on_change="onchange_company(partner_id, journal_id, currency_id, company_id)" groups="base.group_multi_company"/>
-                        <field name="reference"/>
+                        <field name="reference" invisible="1"/>
                         <field name="number"/>
                         <field name="currency_id" groups="base.group_multi_currency"/>
                         <field name="account_id" widget="selection" invisible="True"/>

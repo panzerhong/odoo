@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--Template for hotel reservation -->
+        <template id="report_checkin_qweb">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <div class="row">
+                                <h2>
+                                    <span>
+                                        <center>Check-In Guest List</center>
+                                    </span>
+                                </h2>
+                            </div>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr class="row mt32 mb32">
+                                        <div class="text-right">
+                                            <strong>From:</strong>
+                                            <span t-esc="formatLang(data['form']['date_start'],date=True)" />
+                                            <strong>To:</strong>
+                                            <span t-esc="formatLang(data['form']['date_end'],date=True)" />
+                                        </div>
+                                    </tr>
+                                    <tr style="border: 1px solid black">
+                                        <td style="border: 1px solid black">
+                                            <strong>No</strong>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <strong>Reservation</strong>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <strong>Customer</strong>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <strong>Check-In Date</strong>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <strong>Room Type</strong>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <strong>Room No</strong>
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="n" t-value="0"/>
+                                    <tr
+                                    t-foreach="get_checkin(data['form']['date_start'],data['form']['date_end']).sorted(key=lambda x: x.checkin)"
+                                    t-as="info">
+                                        <td style="border: 1px solid black">
+                                            <t t-set="n" t-value="n + 1"/>
+                                            <span t-esc="n"/>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <span t-field="info.reservation_no" />
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <span t-field="info.partner_id.name" />
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <span t-field="info.checkin" />
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <table t-foreach="get_room_type(info.reservation_line)" t-as="line">
+                                                <span t-esc="line"/>
+                                            </table>
+                                        </td>
+                                        <td style="border: 1px solid black">
+                                            <t t-foreach="info.reservation_line" t-as="line">
+                                                <table t-foreach="line.reserve" t-as="room">
+                                                    <tr>
+                                                        <td>
+                                                            <span t-esc="room.name"/>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

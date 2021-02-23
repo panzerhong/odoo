@@ -601,6 +601,8 @@ function openerp_pos_models(instance, module){ //module is instance.point_of_sal
             // we try to send the order. shadow prevents a spinner if it takes too long. (unless we are sending an invoice,
             // then we want to notify the user that we are waiting on something )
             var posOrderModel = new instance.web.Model('pos.order');
+
+
             return posOrderModel.call('create_from_ui',
                 [_.map(orders, function (order) {
                     order.to_invoice = options.to_invoice || false;
@@ -821,9 +823,7 @@ function openerp_pos_models(instance, module){ //module is instance.point_of_sal
             this.trigger('change',this);
         },
         get_unit_price: function(){
-            var digits = this.pos.dp['Product Price'];
-            // round and truncate to mimic _sybmbol_set behavior
-            return parseFloat(round_di(this.price || 0, digits).toFixed(digits));
+            return round_di(this.price || 0, this.pos.dp['Product Price'])
         },
         get_base_price:    function(){
             var rounding = this.pos.currency.rounding;

@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <template id="reservation_confirmation_report">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <h3 style="text-align:center;color:#0c367b">Thanks, <span t-esc="o.partner_id.title.name"/> <span t-esc="o.partner_id.name"/>! Your Booking is confirmed</h3>
+                            <style>
+                                td {
+                                font-weight:600;
+                                padding-top:10px
+                                }
+                                .left_col{
+                                color:#2a2a6c;
+                                padding-left:15px;
+                                float:left;
+
+                                }
+                                .right_col{
+                                padding-right:15px;
+                                float:right;
+                                text-align:right;
+                                color:#494e54
+                                }
+                            </style>
+
+                            <table style="border:2px solid #2a2a6c;width:100%;border-bottom: none">
+                                <tr>
+                                    <td class="left_col">Reservation No</td>
+                                    <td class="right_col"><span t-esc="o.reservation_no"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="left_col">Online Ref</td>
+                                    <td class="right_col"><span/></td>
+                                </tr>
+                                <tr>
+                                    <td class="left_col">Email</td>
+                                    <td class="right_col"><span t-esc="o.partner_id.email"/></td>
+                                </tr>
+                            </table>
+
+                            <table style="border:2px solid #2a2a6c;width:100%">
+                                <t t-set="duration" t-value="get_duration(o.checkin, o.checkout)"/>
+                                <tr>
+                                    <td class="left_col">Reservation</td>
+                                    <td class="right_col">
+                                        <span t-esc="duration"/> <span>night(s),</span> <span t-esc="get_rooms(o.reservation_line)"/><span> room(s)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left_col">Check In</td>
+                                    <td class="right_col">
+                                        <span t-esc="add_time(o.checkin)"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left_col">Check Out</td>
+                                    <td class="right_col">
+                                        <span t-esc="add_time(o.checkout)"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border:2px solid #2a2a6c;background-color:#e6edf7;width:100%;border-top: none">
+                                <t t-set="rate_data" t-value="get_rate_data(o.reservation_line, o.pricelist_id)"/>
+                                <t t-set="total" t-value="0"/>
+
+                                <t t-foreach="rate_data" t-as="type">
+                                    <t t-set="total" t-value="total+rate_data[type][0]"/>
+                                    <tr>
+                                        <td class="left_col" colspan="2" style="width:50%">
+                                            <span t-esc="rate_data[type][1]"/><span>  </span><span t-esc="type"/>
+                                        </td>
+                                        <td class="right_col" style="width:50%">
+                                            <span t-esc="'%.2f'%(rate_data[type][0] * duration)"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td class="left_col" colspan="2" style="width:50%">2% ACCO Tax</td>
+                                    <td class="right_col" style="width:50%"><span t-esc="'%.2f'%(total*duration*0.02)"/> </td>
+                                </tr>
+                                <tr>
+                                    <td class="left_col" colspan="2" style="width:50%">10% VAT Tax</td>
+                                    <td class="right_col" style="width:50%"><span t-esc="'%.2f'%(total*duration*1.02*0.1)"/> </td>
+                                </tr>
+                                <tr>
+                                    <td class="left_col" colspan="2" style="width:50%;font-size:20px;font-weight: bold">
+                                        Total
+                                        Price
+                                    </td>
+                                    <td class="right_col" style="width:50%"><span t-esc="'%.2f'%(total*duration*1.122)"/></td>
+                                </tr>
+                            </table>
+                            <table style="border:2px solid #2a2a6c;padding-top:20px;background-color:#0c367b">
+                                <tr>
+                                    <td style="color:white;font-size:15px;text-align:center; padding-left:50px;padding-right:50px">
+                                        You can easily change or cancel this booking for free one day before <span t-esc="add_time(o.checkin)"/> , to
+                                        cancel
+                                        or modify your reservation please contact to :(+855) 23 901 358
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:white;font-size:15px;text-align:left;padding-left:15px">
+                                        Have a great trip!
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="color:white;font-size:15px;text-align:left;padding-left:15px;padding-top:5px">
+                                        Tokyo Hotel Team
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

@@ -3,15 +3,14 @@
 # * stock
 # 
 # Translators:
-# Esther Martín Menéndez <esthermartin001@gmail.com>, 2017
-# oihane <oihanecruce@gmail.com>, 2015
+# Oihane Crucelaegui <oihanecruce@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-14 12:26+0000\n"
-"PO-Revision-Date: 2017-02-28 19:37+0000\n"
-"Last-Translator: Esther Martín Menéndez <esthermartin001@gmail.com>\n"
+"PO-Revision-Date: 2016-02-12 10:26+0000\n"
+"Last-Translator: Martin Trigaux\n"
 "Language-Team: Basque (http://www.transifex.com/odoo/odoo-8/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -541,7 +540,7 @@ msgstr ""
 #. module: stock
 #: model:ir.ui.menu,name:stock.menu_stock_procurement
 msgid "Automatic Procurements"
-msgstr "Hornikuntza"
+msgstr ""
 
 #. module: stock
 #: field:stock.move,string_availability_info:0
@@ -917,7 +916,7 @@ msgstr ""
 #. module: stock
 #: selection:procurement.rule,procure_method:0
 msgid "Create Procurement"
-msgstr "Hornikuntza Sortu"
+msgstr ""
 
 #. module: stock
 #. openerp-web
@@ -934,7 +933,7 @@ msgstr ""
 #. module: stock
 #: field:stock.warehouse.orderpoint,procurement_ids:0
 msgid "Created Procurements"
-msgstr "Sortutako Hornikuntzak"
+msgstr ""
 
 #. module: stock
 #: field:make.procurement,create_uid:0
@@ -1223,7 +1222,7 @@ msgstr ""
 #. module: stock
 #: view:stock.picking.type:stock.stock_picking_type_kanban
 msgid "Delete"
-msgstr "Ezabatu"
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/product.py:264
@@ -1375,7 +1374,7 @@ msgstr ""
 #. module: stock
 #: view:stock.picking.type:stock.stock_picking_type_kanban
 msgid "Edit..."
-msgstr "Editatu..."
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/wizard/stock_transfer_details.py:115
@@ -1446,7 +1445,7 @@ msgstr ""
 #. module: stock
 #: view:stock.quant:stock.quant_search_view
 msgid "Filters"
-msgstr "Iragazkiak"
+msgstr ""
 
 #. module: stock
 #: view:product.putaway:stock.view_putaway
@@ -1536,7 +1535,7 @@ msgstr ""
 #: code:addons/stock/static/src/xml/picking.xml:124
 #, python-format
 msgid "From"
-msgstr "-tik"
+msgstr ""
 
 #. module: stock
 #: field:product.template,track_all:0
@@ -2478,7 +2477,7 @@ msgstr ""
 #: code:addons/stock/static/src/xml/picking.xml:257
 #, python-format
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #. module: stock
 #: field:stock.picking,message_ids:0 field:stock.production.lot,message_ids:0
@@ -2493,7 +2492,7 @@ msgstr "Komunikazio eta mezu erregistroa"
 #. module: stock
 #: field:product.putaway,method:0 field:product.removal,method:0
 msgid "Method"
-msgstr "Metodo"
+msgstr ""
 
 #. module: stock
 #: field:res.company,propagation_minimum_delta:0
@@ -2530,7 +2529,7 @@ msgstr ""
 #. module: stock
 #: view:stock.warehouse.orderpoint:stock.view_warehouse_orderpoint_form
 msgid "Misc"
-msgstr "Misc"
+msgstr ""
 
 #. module: stock
 #: field:stock.move.operation.link,move_id:0
@@ -3051,7 +3050,7 @@ msgstr ""
 #. module: stock
 #: view:procurement.orderpoint.compute:stock.view_procurement_compute_wizard
 msgid "Parameters"
-msgstr "Parametroak"
+msgstr ""
 
 #. module: stock
 #: view:stock.location:stock.view_location_search
@@ -3321,7 +3320,7 @@ msgstr ""
 #: model:ir.model,name:stock.model_procurement_order
 #: selection:stock.location,usage:0 field:stock.move,procurement_id:0
 msgid "Procurement"
-msgstr "Hornikuntza"
+msgstr ""
 
 #. module: stock
 #: field:stock.move,group_id:0
@@ -3366,7 +3365,7 @@ msgstr ""
 #: model:ir.ui.menu,name:stock.menu_stock_procurement_action
 #: model:stock.location,name:stock.location_procurement
 msgid "Procurements"
-msgstr "Hornikuntzak"
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/product.py:282
@@ -3432,7 +3431,7 @@ msgstr ""
 #. module: stock
 #: field:stock.inventory.line,product_name:0
 msgid "Product Name"
-msgstr "Produktu Izena"
+msgstr ""
 
 #. module: stock
 #: model:ir.model,name:stock.model_product_template
@@ -4158,7 +4157,7 @@ msgstr ""
 #: code:addons/stock/static/src/xml/picking.xml:215
 #, python-format
 msgid "Search"
-msgstr "Bilatu"
+msgstr ""
 
 #. module: stock
 #: view:stock.inventory:stock.view_inventory_filter
@@ -4303,7 +4302,7 @@ msgstr ""
 #: view:stock.move:stock.view_move_search field:stock.move,origin:0
 #: view:website:stock.report_picking
 msgid "Source"
-msgstr "Iturria"
+msgstr ""
 
 #. module: stock
 #: field:stock.picking,origin:0
@@ -4501,7 +4500,7 @@ msgstr ""
 #: view:stock.location:stock.view_location_search
 #: view:stock.move:stock.view_move_tree_receipt_picking
 msgid "Supplier"
-msgstr "Hornitzailea"
+msgstr ""
 
 #. module: stock
 #: view:website:stock.report_picking
@@ -4528,7 +4527,7 @@ msgstr ""
 #: model:stock.location,name:stock.stock_location_suppliers
 #: selection:stock.picking.type,code:0
 msgid "Suppliers"
-msgstr "Hornitzaileak"
+msgstr ""
 
 #. module: stock
 #: view:product.template:stock.view_template_property_form
@@ -4956,7 +4955,7 @@ msgstr "Egitekoa"
 #. module: stock
 #: view:stock.move:stock.view_move_search
 msgid "Today"
-msgstr "Gaur"
+msgstr ""
 
 #. module: stock
 #. openerp-web
@@ -5338,7 +5337,7 @@ msgstr "Biltegiak"
 #: code:addons/stock/wizard/stock_change_product_qty.py:58
 #, python-format
 msgid "Warning"
-msgstr "Kontuz"
+msgstr ""
 
 #. module: stock
 #: code:addons/stock/wizard/stock_return_picking.py:132
@@ -5401,7 +5400,7 @@ msgstr ""
 #. module: stock
 #: field:stock.return.picking.line,wizard_id:0
 msgid "Wizard"
-msgstr "Laguntzailea"
+msgstr ""
 
 #. module: stock
 #: view:procurement.orderpoint.compute:stock.view_procurement_compute_wizard

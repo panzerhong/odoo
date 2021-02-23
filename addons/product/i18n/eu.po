@@ -4,16 +4,15 @@
 # 
 # Translators:
 # Ainara Galdona Usatorre <ainaragaldona@avanzosc.es>, 2015
-# Esther Martín Menéndez <esthermartin001@gmail.com>, 2017
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
-# oihane <oihanecruce@gmail.com>, 2015
+# Oihane Crucelaegui <oihanecruce@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2017-02-28 19:37+0000\n"
-"Last-Translator: Esther Martín Menéndez <esthermartin001@gmail.com>\n"
+"PO-Revision-Date: 2016-02-08 18:25+0000\n"
+"Last-Translator: Oihane Crucelaegui <oihanecruce@gmail.com>\n"
 "Language-Team: Basque (http://www.transifex.com/odoo/odoo-8/language/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1056,7 +1055,7 @@ msgstr "Ordenagailuak"
 #. module: product
 #: view:product.template:product.product_template_form_view
 msgid "Configurations"
-msgstr "Konfigurazioak"
+msgstr ""
 
 #. module: product
 #: view:product.template:product.product_template_search_view
@@ -1425,12 +1424,12 @@ msgstr "Taldekatu..."
 #. module: product
 #: model:product.template,name:product.product_product_17_product_template
 msgid "HDD SH-1"
-msgstr "HDD SH-1"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_18_product_template
 msgid "HDD SH-2"
-msgstr "HDD SH-2"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_19_product_template
@@ -1504,7 +1503,7 @@ msgstr ""
 #. module: product
 #: model:product.uom,name:product.product_uom_hour
 msgid "Hour(s)"
-msgstr "Ordua(k)"
+msgstr ""
 
 #. module: product
 #: help:product.uom,factor_inv:0
@@ -1671,7 +1670,7 @@ msgstr "Gakoa"
 #. module: product
 #: model:product.public.category,name:product.Keyboard_Mouse
 msgid "Keyboard / Mouse"
-msgstr "Teklatua / Sagua"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_27_product_template
@@ -2253,32 +2252,32 @@ msgstr ""
 #. module: product
 #: model:product.public.category,name:product.printer
 msgid "Printer"
-msgstr "Imprimagailua"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_37_product_template
 msgid "Printer, All-in-one"
-msgstr "Inprimagailua, All-in-one"
+msgstr ""
 
 #. module: product
 #: model:product.public.category,name:product.processor
 msgid "Processor"
-msgstr "Prozesadorea"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_23_product_template
 msgid "Processor AMD 8-Core"
-msgstr "Prozesadorea AMD 8-Core"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_22_product_template
 msgid "Processor Core i5 2.70 Ghz"
-msgstr "Prozesadorea Core i5 2.70 Ghz"
+msgstr ""
 
 #. module: product
 #: view:product.template:product.product_template_form_view
 msgid "Procurements"
-msgstr "Hornikuntzak"
+msgstr ""
 
 #. module: product
 #: model:ir.model,name:product.model_product_product
@@ -2342,7 +2341,7 @@ msgstr "Produktu Kudeatzailea"
 #. module: product
 #: view:product.template:product.product_template_form_view
 msgid "Product Name"
-msgstr "Produktu Izena"
+msgstr ""
 
 #. module: product
 #: model:ir.model,name:product.model_product_template
@@ -2409,7 +2408,7 @@ msgstr ""
 #. module: product
 #: view:product.pricelist:product.product_pricelist_view_search
 msgid "Products Price"
-msgstr "Produktuen Prezioa"
+msgstr ""
 
 #. module: product
 #: view:product.pricelist:product.product_pricelist_view
@@ -2483,47 +2482,47 @@ msgstr "Paketeko Kopurua"
 #. module: product
 #: field:product.price_list,qty1:0
 msgid "Quantity-1"
-msgstr "Kopurua-1"
+msgstr ""
 
 #. module: product
 #: field:product.price_list,qty2:0
 msgid "Quantity-2"
-msgstr "Kopurua-2"
+msgstr ""
 
 #. module: product
 #: field:product.price_list,qty3:0
 msgid "Quantity-3"
-msgstr "Kopurua-3"
+msgstr ""
 
 #. module: product
 #: field:product.price_list,qty4:0
 msgid "Quantity-4"
-msgstr "Kopurua-4"
+msgstr ""
 
 #. module: product
 #: field:product.price_list,qty5:0
 msgid "Quantity-5"
-msgstr "Kopurua-5"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_14_product_template
 msgid "RAM SR2"
-msgstr "RAM SR2"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_15_product_template
 msgid "RAM SR3"
-msgstr "RAM SR3"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_13_product_template
 msgid "RAM SR5"
-msgstr "RAM SR5"
+msgstr ""
 
 #. module: product
 #: field:product.uom,factor:0
 msgid "Ratio"
-msgstr "Ratio"
+msgstr ""
 
 #. module: product
 #: model:product.category,name:product.product_category_10
@@ -2621,7 +2620,7 @@ msgstr "Sekuentzia"
 #. module: product
 #: model:product.public.category,name:product.server
 msgid "Server"
-msgstr "Zerbitzaria"
+msgstr ""
 
 #. module: product
 #: model:product.template,name:product.product_product_consultant_product_template
@@ -2666,7 +2665,7 @@ msgstr ""
 #: model:product.category,name:product.product_category_9
 #: model:product.public.category,name:product.Software
 msgid "Software"
-msgstr "Software"
+msgstr ""
 
 #. module: product
 #: model:product.public.category,name:product.Speakers
@@ -2748,7 +2747,7 @@ msgstr "Laburpena"
 #. module: product
 #: field:product.supplierinfo,name:0 field:product.template,seller_ids:0
 msgid "Supplier"
-msgstr "Hornitzailea"
+msgstr ""
 
 #. module: product
 #: view:product.supplierinfo:product.product_supplierinfo_form_view
@@ -2800,7 +2799,7 @@ msgstr "Produktu honen hornitzailea"
 #. module: product
 #: view:product.template:product.product_template_form_view
 msgid "Suppliers"
-msgstr "Hornitzaileak"
+msgstr ""
 
 #. module: product
 #: model:product.public.category,name:product.Switch

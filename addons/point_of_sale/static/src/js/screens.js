@@ -1340,7 +1340,10 @@ function openerp_pos_screens(instance, module){ //module is instance.point_of_sa
                 });
 
             }else{
-                this.pos.push_order(currentOrder) 
+
+                this.pos.push_order(currentOrder)
+
+
                 if(this.pos.config.iface_print_via_proxy){
                     var receipt = currentOrder.export_for_printing();
                     this.pos.proxy.print_receipt(QWeb.render('XmlReceipt',{

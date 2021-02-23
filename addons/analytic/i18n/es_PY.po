@@ -160,12 +160,12 @@ msgstr "Fecha de creación"
 #: field:account.analytic.account,create_uid:0
 #: field:account.analytic.line,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,credit:0
@@ -227,7 +227,7 @@ msgstr ""
 #. module: analytic
 #: field:account.analytic.account,message_follower_ids:0
 msgid "Followers"
-msgstr "Seguidores"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,complete_name:0
@@ -249,7 +249,7 @@ msgstr "ID"
 #. module: analytic
 #: help:account.analytic.account,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "Si marcado la nueva mensaje requiere atencion"
+msgstr ""
 
 #. module: analytic
 #: help:account.analytic.account,type:0
@@ -276,24 +276,24 @@ msgstr "En progreso"
 #. module: analytic
 #: field:account.analytic.account,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Es un seguidor"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,message_last_post:0
 msgid "Last Message Date"
-msgstr "Fecha de la ultima mensaje"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,write_uid:0
 #: field:account.analytic.line,write_uid:0
 msgid "Last Updated by"
-msgstr "Ultima actualización por"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,write_date:0
 #: field:account.analytic.line,write_date:0
 msgid "Last Updated on"
-msgstr "Ultima actualización en"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.account,message_ids:0
@@ -303,7 +303,7 @@ msgstr "Mensajes"
 #. module: analytic
 #: help:account.analytic.account,message_ids:0
 msgid "Messages and communication history"
-msgstr "Mensajes y historial de comunicación"
+msgstr ""
 
 #. module: analytic
 #: selection:account.analytic.account,state:0
@@ -414,7 +414,7 @@ msgstr ""
 #. module: analytic
 #: field:account.analytic.account,message_unread:0
 msgid "Unread Messages"
-msgstr "Mensajes sin leer"
+msgstr ""
 
 #. module: analytic
 #: field:account.analytic.line,user_id:0

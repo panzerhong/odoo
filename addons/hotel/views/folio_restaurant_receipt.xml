@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <template id="folio_restaurant_receipt">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <div class="row">
+                            <div class="text-center">
+            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                 style="max-height: 80px;"/>
+        </div>
+                        </div>
+                        <div class="row">
+                            <h4>
+                                <span>
+                                    <center>RECEIPT</center>
+                                </span>
+                            </h4>
+                        </div>
+                        <div class="row mt32 mb32">
+                            <div class="text-center">
+                                <strong>Date: </strong>
+                                <span t-esc="o.checkout_date" /><br/>
+                                <strong>User:</strong>
+                                <span t-field="o.user_id"/><br/>
+                                <strong>Folio: </strong>
+                                <span t-esc="o.name"/>
+                            </div>
+                        </div>
+                        <table class="table">
+                            <thead style="background-color: #f2f2f2;">
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <center>Description</center>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <center>Q-ty</center>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <center>Price</center>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <center>Amount</center>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="tot" t-value="0"/>
+                                <t t-set="vat" t-value="0"/>
+                                <tr t-foreach="o.restaurant_lines" t-as="line" style="page-break-inside: avoid;">
+                                    <td>
+                                        <span t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.product_uom_qty"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="'%.2f'%line.list_price"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="'%.2f'%(line.list_price * line.product_uom_qty)"/>
+                                    </td>
+                                    <t t-set="tot" t-value="tot + line.list_price*line.product_uom_qty"/>
+                                    <t t-foreach="line.restaurant_line_tax_id" t-as="tax">
+                                        <t t-set="vat" t-value="vat + line.product_uom_qty*tax.amount * line.list_price"/>
+                                    </t>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td colspan="2">
+                                        Subtotal
+                                    </td>
+                                    <td>
+                                        <span t-esc="'%.2f'%tot"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td/>
+                                    <td colspan="2">
+                                        VAT included 10%:
+                                    </td>
+                                    <td>
+                                        <span t-esc="'%.2f'%vat"/>
+                                    </td>
+                                </tr>
+                                <tr style="font: 20px bold;">
+                                    <td/>
+                                    <td colspan="2">
+                                        Total:
+                                    </td>
+                                    <td>
+                                        <span t-esc="'%.2f'%(tot+vat)"/>
+                                    </td>
+                                </tr>
+                                <tr t-if="o.state == 'done'">
+                                    <td/>
+                                    <td t-if="o.hotel_invoice_id.payment_ids" colspan="2">
+                                        <span t-esc="o.hotel_invoice_id.payment_ids[0].journal_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="'%.2f'%(tot+vat)"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center">
+                            <strong>Thank You!</strong>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

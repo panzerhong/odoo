@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!--Report for hotel folio -->
+
+        <report id="report_hotel_management" string="Hotel Folio"
+            model="hotel.folio" report_type="qweb-pdf" file="hotel.report_hotel_folio"
+            name="hotel.report_hotel_folio" menu="False" />
+
+         <report id="report_apartment_hotel" string="Hotel Apartment Report"
+            model="hotel.folio" report_type="qweb-pdf"
+            file="hotel.report_hotel_folio_apartment"
+            name="hotel.report_hotel_folio_apartment" menu="False" />
+
+        <report id="report_daily_hotel" string="Hotel Daily Report"
+            model="hotel.folio" report_type="qweb-pdf" file="hotel.report_hotel_folio_daily"
+            name="hotel.report_hotel_folio_daily" menu="False" />
+
+        <report id="restaurant_receipt_print" string="Restaurant Receipt"
+            model="hotel.folio" report_type="qweb-pdf"
+            file="hotel.folio_restaurant_receipt"
+            name="hotel.folio_restaurant_receipt" menu="True" />
+
+        <!--Report for currency exchange -->
+        <report id="report_hotel_currency" string="Encashment Certificate"
+            model="currency.exchange" report_type="qweb-pdf"
+            file="hotel.report_currency_exchange" name="hotel.report_currency_exchange"
+            menu="False" />
+
+    </data>
+</openerp>

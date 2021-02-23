@@ -1,0 +1,141 @@
+
+.table_header
+{
+	text-align: center;
+	min-width:140px;
+	vertical-align: middle;
+              width:-moz-max-content;
+             -webkit-logical-width:100px;
+             border-collapse: collapse;
+}
+.table_reserved
+{
+	background-color: red;
+	color: white;
+	text-align: center;
+	min-width:140px;
+              max-width:140px;
+	vertical-align: middle;
+	cursor:pointer;
+    text-overflow: ellipsis;
+        overflow: hidden;
+}
+.table_reserved1
+{
+	background-color: blue;
+	color: white;
+	text-align: center;
+	min-width:100px;
+	vertical-align: middle;
+	cursor:pointer;
+}
+.table_free
+{
+	background-color: green;
+	color: white;
+	text-align: center;
+	min-width:140px;
+	vertical-align: middle;
+	cursor:pointer;
+}
+
+/*Freezer */
+
+.table-freeze-multi{
+    table-layout: fixed;
+    width: auto;
+}
+
+
+
+
+/*.table-freeze-multi-clone {
+    table-layout: fixed;
+    width: 100%;
+}*/
+
+
+
+
+.freeze-multi-scroll-wrapper {
+    position: relative;
+    clear: both;
+}
+.freeze-multi-scroll-table-head {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.freeze-multi-scroll-table-head-inner {
+    width: 100%;
+    position: relative;
+    /*overflow: hidden;*/
+}
+.freeze-multi-scroll-table-body {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    max-height: 450px;
+}
+.freeze-multi-scroll-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+}
+.freeze-multi-scroll-left-head {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.freeze-multi-scroll-left-body,
+.freeze-multi-scroll-left-body-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.freeze-multi-scroll-left-body-inner {
+    overflow-y: scroll;
+}
+/* @see https://davidwalsh.name/detect-scrollbar-width */
+/* way the hell off screen */
+
+.freezer-scrollbar-measure {
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    position: absolute;
+    top: -9999px;
+}
+
+#freezer-example .table th, #freezer-example .table td {
+        white-space: nowrap;
+    }
+
+    #freezer-example .table th {
+        outline: 1px solid #cacaca;
+        background: #ededed;
+        min-width: 140px;
+    }
+
+    #freezer-example .table thead th {
+        outline: 1px solid #cacaca;
+    }
+
+    #freezer-example .table col {
+        width: 140px;
+
+    }
+
+#freezer-example{
+	width: 100%;
+	height: 450px;
+}
+.table_hotel{
+    width: 100%;
+}
+.container{
+    width: auto;
+}

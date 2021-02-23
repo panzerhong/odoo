@@ -313,6 +313,8 @@ def login_redirect():
     url = '/web/login?'
     # built the redirect url, keeping all the query parameters of the url
     redirect_url = '%s?%s' % (request.httprequest.base_url, werkzeug.urls.url_encode(request.params))
+    if 'localhost' in redirect_url:
+        redirect_url = '%s?%s' % ('/', werkzeug.urls.url_encode(request.params))
     return """<html><head><script>
         window.location = '%sredirect=' + encodeURIComponent("%s" + location.hash);
     </script></head></html>

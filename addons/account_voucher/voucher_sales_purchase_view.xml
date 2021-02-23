@@ -189,10 +189,10 @@
             <field name="act_window_id" ref="action_sale_receipt"/>
         </record>
 
-        <menuitem id="menu_action_sale_receipt" icon="STOCK_JUSTIFY_FILL"
+        <!-- <menuitem id="menu_action_sale_receipt" icon="STOCK_JUSTIFY_FILL"
             action="action_sale_receipt"
             parent="account.menu_finance_receivables"
-            sequence="10"/>
+            sequence="10"/> -->
 
         <!--  Purchase Vouchers -->
         <record id="act_pay_bills" model="ir.actions.act_window">
@@ -345,8 +345,8 @@
             <field name="act_window_id" ref="action_purchase_receipt"/>
         </record>
 
-        <menuitem id="menu_action_purchase_receipt" icon="STOCK_JUSTIFY_FILL"
-            action="action_purchase_receipt" parent="account.menu_finance_payables" sequence="10"/>
+        <!-- <menuitem id="menu_action_purchase_receipt" icon="STOCK_JUSTIFY_FILL"
+            action="action_purchase_receipt" parent="account.menu_finance_payables" sequence="10"/> -->
 
     </data>
 </openerp>

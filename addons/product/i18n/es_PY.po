@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2017-09-22 08:29+0000\n"
+"PO-Revision-Date: 2015-07-29 08:39+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Spanish (Paraguay) (http://www.transifex.com/odoo/odoo-8/language/es_PY/)\n"
 "MIME-Version: 1.0\n"
@@ -1119,7 +1119,7 @@ msgstr ""
 #: field:product.template,create_uid:0 field:product.ul,create_uid:0
 #: field:product.uom,create_uid:0 field:product.uom.categ,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: product
 #: field:pricelist.partnerinfo,create_date:0
@@ -1140,7 +1140,7 @@ msgstr "Creado por"
 #: field:product.template,create_date:0 field:product.ul,create_date:0
 #: field:product.uom,create_date:0 field:product.uom.categ,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: product
 #: model:ir.model,name:product.model_res_currency
@@ -1347,7 +1347,7 @@ msgstr "Fijo"
 #: field:product.product,message_follower_ids:0
 #: field:product.template,message_follower_ids:0
 msgid "Followers"
-msgstr "Seguidores"
+msgstr ""
 
 #. module: product
 #: help:product.pricelist.item,min_quantity:0
@@ -1535,7 +1535,7 @@ msgstr "ID"
 #: help:product.product,message_unread:0
 #: help:product.template,message_unread:0
 msgid "If checked new messages require your attention."
-msgstr "Si marcado la nueva mensaje requiere atencion"
+msgstr ""
 
 #. module: product
 #: help:product.pricelist,active:0
@@ -1647,7 +1647,7 @@ msgstr ""
 #: field:product.product,message_is_follower:0
 #: field:product.template,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Es un seguidor"
+msgstr ""
 
 #. module: product
 #: field:product.product,is_product_variant:0
@@ -1694,7 +1694,7 @@ msgstr ""
 #: field:product.product,message_last_post:0
 #: field:product.template,message_last_post:0
 msgid "Last Message Date"
-msgstr "Fecha de la ultima mensaje"
+msgstr ""
 
 #. module: product
 #: field:pricelist.partnerinfo,write_uid:0 field:product.attribute,write_uid:0
@@ -1712,7 +1712,7 @@ msgstr "Fecha de la ultima mensaje"
 #: field:product.template,write_uid:0 field:product.ul,write_uid:0
 #: field:product.uom,write_uid:0 field:product.uom.categ,write_uid:0
 msgid "Last Updated by"
-msgstr "Ultima actualización por"
+msgstr ""
 
 #. module: product
 #: field:pricelist.partnerinfo,write_date:0
@@ -1731,7 +1731,7 @@ msgstr "Ultima actualización por"
 #: field:product.template,write_date:0 field:product.ul,write_date:0
 #: field:product.uom,write_date:0 field:product.uom.categ,write_date:0
 msgid "Last Updated on"
-msgstr "Ultima actualización en"
+msgstr ""
 
 #. module: product
 #: help:product.pricelist.version,date_end:0
@@ -1861,7 +1861,7 @@ msgstr "Mensajes"
 #. module: product
 #: help:product.product,message_ids:0 help:product.template,message_ids:0
 msgid "Messages and communication history"
-msgstr "Mensajes y historial de comunicación"
+msgstr ""
 
 #. module: product
 #: view:product.pricelist.item:product.product_pricelist_item_form_view
@@ -2339,7 +2339,7 @@ msgstr "Responsable de producto"
 #. module: product
 #: view:product.template:product.product_template_form_view
 msgid "Product Name"
-msgstr "Nombre del producto"
+msgstr ""
 
 #. module: product
 #: model:ir.model,name:product.model_product_template
@@ -3116,7 +3116,7 @@ msgstr "Categorías de unidades de medida"
 #: field:product.product,message_unread:0
 #: field:product.template,message_unread:0
 msgid "Unread Messages"
-msgstr "Mensajes sin leer"
+msgstr ""
 
 #. module: product
 #: help:product.pricelist.type,key:0
@@ -3280,7 +3280,7 @@ msgstr "cm"
 #. module: product
 #: view:product.template:product.product_template_form_view
 msgid "describe the product characteristics..."
-msgstr "describa las características del producto"
+msgstr ""
 
 #. module: product
 #: view:product.uom:product.product_uom_form_view

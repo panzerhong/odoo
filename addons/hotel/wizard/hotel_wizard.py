@@ -1,22 +1,53 @@
-# See LICENSE file for full copyright and licensing details.
+# -*- coding: utf-8 -*-
+#############################################################################
+#
+#    OpenERP, Open Source Management Solution
+#    Copyright (C) 2012-Today Serpent Consulting Services Pvt. Ltd.
+#    (<http://www.serpentcs.com>)
+#    Copyright (C) 2004 OpenERP SA (<http://www.openerp.com>)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>
+#
+#############################################################################
+import datetime
 
-from odoo import fields, models
+from openerp import models, fields, api
 
 
 class FolioReportWizard(models.TransientModel):
-    _name = "folio.report.wizard"
-    _rec_name = "date_start"
-    _description = "Allow print folio report by date"
+    _name = 'folio.report.wizard'
+    _rec_name = 'date_start'
 
-    date_start = fields.Datetime("Start Date")
-    date_end = fields.Datetime("End Date")
+    @api.multi
+    def _defaults_date_start(self):
+        date_start = datetime.datetime.now().strftime("%Y-%m-%d 07:00:00")
+        return date_start
 
+    @api.multi
+    def _defaults_date_end(self):
+        date_end = (datetime.datetime.now() + datetime.timedelta(days=1)).strftime("%Y-%m-%d 05:00:00")
+        return date_end
+
+    date_start = fields.Datetime('Start Date', default = _defaults_date_start)
+    date_end = fields.Datetime('End Date', default = _defaults_date_end)
+
+    @api.multi
     def print_report(self):
         data = {
-            "ids": self.ids,
-            "model": "hotel.folio",
-            "form": self.read(["date_start", "date_end"])[0],
+            'ids': self.ids,
+            'model': 'hotel.folio',
+            'form': self.read(['date_start', 'date_end'])[0]
         }
-        return self.env.ref("hotel.report_hotel_management").report_action(
-            self, data=data
-        )
+        return self.env['report'].get_action(self, 'hotel.report_hotel_folio',
+                                             data=data)

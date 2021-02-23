@@ -1,53 +1,53 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: https://www.gnu.org/licenses/agpl
-   :alt: License: AGPL-3
+hotel
 
-================
-Hotel Management
-================
-
-Module for Complete Hotel management which includes the basic operations at a hotel/apartment.
+This Module is for Providing Hotel management Features. 
 
 You can manage:
+-Hotel Booking,
+-Hotel Facilities and Amenities,
+-RESTURANTS,
+-Currency Exchange,
+-REPORTS
 
-* Configure Property
+-Different reports are also provided, mainly for hotel.
 
-* Hotel Configuration
+Installation
 
-* Manage history of Check In, Check out
+To install this module, you need to:
 
-* Manage Folio
+install 'sale_stock', 'point_of_sale', 'hotel_report_layout' modules
 
-* Payment
+Configuration
 
+To configure this module, you need to:
+
+have a Hotel management functionality.
+
+Usage
+
+To use this module, you need to:
+
+go to apps, then install module to apply this functionality.
+
+Try me on Runbot
+Known issues / Roadmap
+
+...
 
 Bug Tracker
-===========
 
-Bugs are tracked on `GitHub Issues
-<https://github.com/OCA/vertical-hotel/issues>`_. In case of trouble, please
-check there if your issue has already been reported. If you spotted it first,
-help us smash it by providing detailed and welcomed feedback.
+Bugs are tracked on GitHub Issues. In case of trouble, please check there if your issue has already been reported. If you spotted it first, help us smashing it by providing a detailed and welcomed feedback here.
 
 Credits
-=======
 
 Contributors
-------------
 
-* Serpent Consulting Services Pvt. Ltd. <jay.vora@serpentcs.com> (http://www.serpentcs.com)
+Serpent Consulting Services PVT. LTD. <http://serpentcs.com>
 
 Maintainer
-----------
 
-.. image:: https://odoo-community.org/logo.png
-   :alt: Odoo Community Association
-   :target: https://odoo-community.org
+Serpent Consulting Services PVT. LTD.
 
-This module is maintained by the OCA.
+This module is maintained by the SerpentCS.
 
-OCA, or the Odoo Community Association, is a nonprofit organization whose
-mission is to support the collaborative development of Odoo features and
-promote its widespread use.
-
-To contribute to this module, please visit https://odoo-community.org.
+To contribute to this module, please visit https://github.com/JayVora-SerpentCS/hotelmgmt_v8.

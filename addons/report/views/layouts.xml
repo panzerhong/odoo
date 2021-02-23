@@ -56,7 +56,34 @@
         <t t-set="company" t-value="res_company"></t>
     </t>
 
-    <t t-call="report.external_layout_header" />
+    <t t-call="report.external_layout_header_hotel" />
+    <t t-raw="0" />
+    <t t-call="report.external_layout_footer" />
+</template>
+
+<template id="external_layout_invoice">
+    <!-- Multicompany -->
+    <t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"></t>
+    </t>
+    <t t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company"></t>
+    </t>
+
+    <t t-call="report.external_layout_header_invoice" />
+    <t t-raw="0" />
+    <t t-call="report.external_layout_footer" />
+</template>
+<template id="external_layout_receipt">
+    <!-- Multicompany -->
+    <t t-if="o and 'company_id' in o">
+        <t t-set="company" t-value="o.company_id"></t>
+    </t>
+    <t t-if="not o or not 'company_id' in o">
+        <t t-set="company" t-value="res_company"></t>
+    </t>
+
+    <t t-call="report.external_layout_header_receipt" />
     <t t-raw="0" />
     <t t-call="report.external_layout_footer" />
 </template>
@@ -79,6 +106,139 @@
                 <div t-field="company.partner_id" 
                     t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'
                     style="border-bottom: 1px solid black;"/>
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- Nun Sophanon, this is to replace external layout header -->
+<template id= "external_layout_header_hotel">
+          <div class="header" style="font-family: Helvetica, Khmer OS; ">
+            <div>
+                <div class="col-xs-3">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                         style="max-height: 80px;"/>
+                </div>
+
+                <div class="col-xs-9 text-right" style="margin-left:-20px">
+                    <div t-field="company.partner_id" style="font-size:16px"/>
+                    <div style="font-size:11px" t-field="company.street"/>
+                    <div>
+                        <span style="display:inline; font-size:11px" t-field="company.street2"/>,
+                        <span style="display:inline; font-size:11px" t-field="company.city"/>,
+                        <span style="display:inline; font-size:11px" t-field="company.country_id"/>
+                    </div>
+                    <div>
+                        <div style="display:inline; font-size:11px">Tel:
+                            <span t-field="company.phone"/>
+                        </div>
+                        <div style="display:inline; font-size:11px">, Web:
+                            <span t-field="company.website"/>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid black;"/>
+                </div>
+            </div>
+        </div>
+ </template>
+
+<template id= "external_layout_header_invoice">
+      <div class="header" style="font-family: Helvetica, Khmer OS; ">
+        <div>
+            <div class="col-xs-3">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                     style="max-height: 80px;"/>
+            </div>
+
+            <div class="col-xs-9 text-right" style="margin-left:-20px">
+                <div t-field="company.partner_id" style="font-size:16px"/>
+                <div style="font-size:11px" t-field="company.street"/>
+                <div>
+                    <span style="display:inline; font-size:11px" t-field="company.street2"/>,
+                    <span style="display:inline; font-size:11px" t-field="company.city"/>,
+                    <span style="display:inline; font-size:11px" t-field="company.country_id"/>
+                </div>
+                <div style="margin-left: 40%">
+                    <table>
+                        <tr>
+                            <th width="20%">
+                                <span style="font-size:11px; width: auto;">VATTIN:</span>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th> - </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000; font-size:10px; text-align:center; margin:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                            <th>
+                                <div style="width:18px;height:18px;border:1px solid #000;font-size:10px;text-align:center;margin-right:5px">0</div>
+                            </th>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <div style="display:inline; font-size:11px">Tel:
+                        <span t-field="company.phone"/>
+                    </div>
+                    <div style="display:inline; font-size:11px">, Web:
+                        <span t-field="company.website"/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row zero_min_height">
+            <div class="col-xs-12">
+                <div style="border-bottom: 1px solid black;"/>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="external_layout_header_receipt">
+    <div class="header">
+        <div class="row">
+            <div class="text-center">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 45px;"/>
             </div>
         </div>
     </div>
@@ -112,6 +272,51 @@
             </ul>
         </div>
     </div>      
+</template>
+
+<template id="external_layout_footer_invoice">
+    <div class="footer">
+        <div style="border-top: 1px solid black;">
+            <div class="col-xs-4 mt64">
+                <div style="border-bottom: 1px solid black; margin-top: 15px; "/>
+                <div style="font-size:12px">ហត្ថលេខា និង ឈ្មោះអ្នកទិញ</div>
+                     <strong style="font-size:12px">Customer's Signature &amp; Name</strong>
+                </div>
+                <div class="col-xs-4 pull-right mt64">
+                     <div style="border-bottom: 1px solid black; margin-top: 15px; "/>
+                </div>
+            <div class="col-xs-8 text-right">
+                <div style="font-size:12px">ហត្ថលេខា និង ឈ្មោះអ្នកលក់</div>
+                <strong style="font-size:12px">Seller's Signature/Sale &amp; Name</strong>
+            </div>
+            <div class="col-xs-12">
+                <span style="font-size:11px">
+                    សំគាល់៖ ច្បាប់ដើមសម្រាប់អ្នកទិញ ច្បាប់ចម្លងសំរាប់អ្នកលក់
+                </span>
+                <span style="font-size:11px">
+                    <strong>Note:</strong>Original invoice for customer, copied invoice for seller
+                </span>
+                <br/>
+                <span style="font-size:11px">
+                    The bank transfer should be made using the following details: Account Name:
+                    <strong>A2A Town (Cambodia)
+                        Co,.Ltd
+                    </strong>
+                </span>
+                <br/>
+                <span style="font-size:11px">
+                    Account Number:
+                    <strong>3469-01-731058-1-0, ACLEDA Bank plc.</strong>
+                </span>
+                <ul class="list-inline" style="text-align: right; font-size:12px">
+                    <li>Page:</li>
+                    <li><span class="page"/></li>
+                    <li>/</li>
+                    <li><span class="topage"/></li>
+                </ul>
+             </div>
+        </div>
+    </div>
 </template>
 
 <template id="internal_layout">

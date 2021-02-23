@@ -250,6 +250,7 @@ class sale_order(osv.osv):
         'section_id': fields.many2one('crm.case.section', 'Sales Team'),
         'procurement_group_id': fields.many2one('procurement.group', 'Procurement group', copy=False),
         'product_id': fields.related('order_line', 'product_id', type='many2one', relation='product.product', string='Product'),
+        'folio_no' : fields.many2one('hotel.folio', 'Folio Number'),
     }
 
     _defaults = {
@@ -574,6 +575,12 @@ class sale_order(osv.osv):
                     self.write(cr, uid, [order.id], {'state': 'progress'})
                     cr.execute('insert into sale_order_invoice_rel (order_id,invoice_id) values (%s,%s)', (order.id, res))
                     self.invalidate_cache(cr, uid, ['invoice_ids'], [order.id], context=context)
+        
+        sale_o=self.browse(cr, uid, ids, context=context);
+        print "-----------------sale ", sale_o
+        invoice.write(cr, uid, [res], {'folio_no' : sale_o.folio_no.id, 'receipt_no': sale_o.folio_no.receipt_no,
+                                       'checkin': sale_o.folio_no.checkin_date, 'checkout': sale_o.folio_no.checkout_date})
+
         return res
 
     def action_invoice_cancel(self, cr, uid, ids, context=None):
@@ -957,6 +964,7 @@ class sale_order_line(osv.osv):
         }, readonly=True),
         'delay': fields.float('Delivery Lead Time', required=True, help="Number of days between the order confirmation and the shipping of the products to the customer", readonly=True, states={'draft': [('readonly', False)]}),
         'procurement_ids': fields.one2many('procurement.order', 'sale_line_id', 'Procurements'),
+        
     }
     _order = 'order_id desc, sequence, id'
     _defaults = {
@@ -1225,9 +1233,8 @@ class sale_order_line(osv.osv):
                 result.update({'price_unit': price})
                 if context.get('uom_qty_change', False):
                     values = {'price_unit': price}
-                    for field in ['product_uos_qty', 'th_weight']:
-                        if not result.get(field, False) is False:
-                            values[field] = result[field]
+                    if result.get('product_uos_qty'):
+                        values['product_uos_qty'] = result['product_uos_qty']
                     return {'value': values, 'domain': {}, 'warning': False}
         if warning_msgs:
             warning = {
@@ -1239,6 +1246,7 @@ class sale_order_line(osv.osv):
     def product_uom_change(self, cursor, user, ids, pricelist, product, qty=0,
             uom=False, qty_uos=0, uos=False, name='', partner_id=False,
             lang=False, update_tax=True, date_order=False, context=None):
+        print "=====sale_order_line product_uom_change"
         context = context or {}
         lang = lang or ('lang' in context and context['lang'])
         if not uom:
@@ -1251,6 +1259,7 @@ class sale_order_line(osv.osv):
     def onchange_product_uom(self, cursor, user, ids, pricelist, product, qty=0,
                              uom=False, qty_uos=0, uos=False, name='', partner_id=False,
                              lang=False, update_tax=True, date_order=False, fiscal_position=False, context=None):
+        print "=====sale_order_line onchange_product_uom"
         ctx = dict(context or {}, fiscal_position=fiscal_position)
         return self.product_uom_change(cursor, user, ids, pricelist, product,
                                       qty=qty, uom=uom, qty_uos=qty_uos, uos=uos, name=name,
@@ -1317,7 +1326,6 @@ class account_invoice(osv.Model):
         so_ids = sale_order_obj.search(cr, uid, [('invoice_ids', 'in', ids)], context=context)
         for so_id in so_ids:
             sale_order_obj.message_post(cr, uid, so_id, body=_("Invoice paid"), context=context)
-            workflow.trg_write(uid, 'sale.order', so_id, cr)
         return res
 
     def unlink(self, cr, uid, ids, context=None):

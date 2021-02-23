@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="res_partner_hls_inherit">
+            <field name="name">res.partner.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <data>
+                     <field name="name" position="after">
+                        <field name="last_name" placeholder="Last Name"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hotel_room_inherit">
+            <field name="name">hotel.room.inherit</field>
+            <field name="model">hotel.room</field>
+            <field name="inherit_id" ref="hotel.view_hotel_room_form"/>
+            <field name="arch" type="xml">
+                <data>
+                     <field name="categ_id" position="after">
+                        <field name="room_type_id" invisible="1"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="rate_plan_line_product_category">
+            <field name="name">hotel.room.type.inherit</field>
+            <field name="model">hotel.room.type</field>
+            <field name="inherit_id" ref="hotel.view_hotel_room_type_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="categ_id" position="after">
+                        <field name="room_type_id"/>
+                    </field>
+                    <xpath expr="//form/sheet" position="inside">
+                        <notebook>
+                            <page string="RatePlans">
+                                <field name="rate_plan_line" editable="bottom">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="rate_plan_id"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="name"/>
+                                            </group>
+                                            <group>
+                                                <field name="rate_plan_id"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="booking_id_hotel_reservation_form_inheritance">
+            <field name="name">hotel.reservation.form.inherit</field>
+            <field name="model">hotel.reservation</field>
+            <field name="inherit_id" ref="hotel_reservation.view_hotel_reservation_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="partner_id" position="before">
+                        <field name="booking_id"/>
+                    </field>
+                </data>
+                <xpath expr="//field[@name='apartment']" position="after">
+                    <field name="pick_up"/>
+                    <field name="drop_off"/>
+                    <field name="flight_inbound" attrs="{'invisible': [('pick_up','=',False)]}" />
+                    <field name="flight_outbound" attrs="{'invisible': [('drop_off','=',False)]}" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="confirm_wizard_form">
+            <field name="name">wizard.form</field>
+            <field name="model">hotel.confirm_wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Confirm dialog">
+                    <separator string="Do you really want to cancel this reservation?" colspan="4"/>
+                    <footer>
+                        <button name="confirm" string="Yes" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="booking_id_hotel_reservation_tree_inheritance">
+            <field name="name">hotel.reservation.tree.inherit</field>
+            <field name="model">hotel.reservation</field>
+            <field name="inherit_id" ref="hotel_reservation.view_hotel_reservation_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="partner_id" position="before">
+                        <field name="booking_id"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="ir_cron_scheduler_hls_action" model="ir.cron">
+            <field name="name">HLS</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">20</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'schedulling.getbooking.hls'" name="model"/>
+            <field eval="'request_to_hls'" name="function"/>
+        </record>
+    </data>
+</openerp>

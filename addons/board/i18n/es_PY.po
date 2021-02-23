@@ -138,12 +138,12 @@ msgstr ""
 #. module: board
 #: field:board.create,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: board
 #: field:board.create,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: board
 #. openerp-web
@@ -167,12 +167,12 @@ msgstr "ID"
 #. module: board
 #: field:board.create,write_uid:0
 msgid "Last Updated by"
-msgstr "Ultima actualización por"
+msgstr ""
 
 #. module: board
 #: field:board.create,write_date:0
 msgid "Last Updated on"
-msgstr "Ultima actualización en"
+msgstr ""
 
 #. module: board
 #: view:board.board:board.board_my_dash_view

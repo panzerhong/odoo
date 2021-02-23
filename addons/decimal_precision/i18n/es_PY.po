@@ -22,13 +22,13 @@ msgstr ""
 #: field:decimal.precision,create_uid:0
 #: field:decimal.precision.test,create_uid:0
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: decimal_precision
 #: field:decimal.precision,create_date:0
 #: field:decimal.precision.test,create_date:0
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: decimal_precision
 #: model:ir.actions.act_window,name:decimal_precision.action_decimal_precision_form
@@ -56,13 +56,13 @@ msgstr "ID"
 #: field:decimal.precision,write_uid:0
 #: field:decimal.precision.test,write_uid:0
 msgid "Last Updated by"
-msgstr "Ultima actualización por"
+msgstr ""
 
 #. module: decimal_precision
 #: field:decimal.precision,write_date:0
 #: field:decimal.precision.test,write_date:0
 msgid "Last Updated on"
-msgstr "Ultima actualización en"
+msgstr ""
 
 #. module: decimal_precision
 #: sql_constraint:decimal.precision:0

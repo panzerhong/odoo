@@ -930,10 +930,12 @@ class account_voucher(osv.osv):
         return {}
 
     def button_proforma_voucher(self, cr, uid, ids, context=None):
+        print "---------------asdfjkhkajsdhfaskjdfhjklasdhfjklasdhfkjlsadf"
         self.signal_workflow(cr, uid, ids, 'proforma_voucher')
         return {'type': 'ir.actions.act_window_close'}
 
     def proforma_voucher(self, cr, uid, ids, context=None):
+        print "================asdfj1232345678987654567876545678765"
         self.action_move_line_create(cr, uid, ids, context=context)
         return True
 
@@ -955,17 +957,17 @@ class account_voucher(osv.osv):
                 if line.reconcile_id:
                     move_lines = [move_line.id for move_line in line.reconcile_id.line_id]
                     move_lines.remove(line.id)
-                    reconcile_pool.unlink(cr, uid, [line.reconcile_id.id], context=context)
+                    reconcile_pool.unlink(cr, uid, [line.reconcile_id.id])
                     if len(move_lines) >= 2:
                         move_line_pool.reconcile_partial(cr, uid, move_lines, 'auto',context=context)
             if voucher.move_id:
-                move_pool.button_cancel(cr, uid, [voucher.move_id.id], context=context)
-                move_pool.unlink(cr, uid, [voucher.move_id.id], context=context)
+                move_pool.button_cancel(cr, uid, [voucher.move_id.id])
+                move_pool.unlink(cr, uid, [voucher.move_id.id])
         res = {
             'state':'cancel',
             'move_id':False,
         }
-        self.write(cr, uid, ids, res, context=context)
+        self.write(cr, uid, ids, res)
         return True
 
     def unlink(self, cr, uid, ids, context=None):
@@ -1245,11 +1247,16 @@ class account_voucher(osv.osv):
                     line.type = 'dr'
 
             if (line.type=='dr'):
+                print "before worng +++++++++",tot_line
                 tot_line += amount
                 move_line['debit'] = amount
+                print tot_line,"yayayyayayayayyayayyayayyayayayayayyayayayyayayayayayayayayay", amount
             else:
-                tot_line -= amount
+                print tot_line,"before wrong",tot_line-amount
+                tot_line = tot_line - amount
                 move_line['credit'] = amount
+                print "yay-----------------------ayayayayyayayayyayayayayayayayayay", amount
+            print amount,"[[][][][][][][][][][][]][]",tot_line
 
             if voucher.tax_id and voucher.type in ('sale', 'purchase'):
                 move_line.update({
@@ -1325,8 +1332,11 @@ class account_voucher(osv.osv):
 
         voucher = self.pool.get('account.voucher').browse(cr,uid,voucher_id,context)
         current_currency_obj = voucher.currency_id or voucher.journal_id.company_id.currency_id
+        print voucher.payment_option, voucher.type, "gggggggggggggggggggggggggggggg", voucher.account_id.name
+        print currency_obj.is_zero(cr, uid, current_currency_obj, line_total),"nearlllllllllllllllllylyyylylylylylylylylylylyl",line_total,current_currency_obj
 
         if not currency_obj.is_zero(cr, uid, current_currency_obj, line_total):
+            print "hhhhhhhashdhhhhhahhhhahahahahhahahahahhahahahhahhahhahah"
             diff = line_total
             account_id = False
             write_off_name = ''
@@ -1339,6 +1349,7 @@ class account_voucher(osv.osv):
                 else:
                     account_id = voucher.partner_id.property_account_payable.id
             else:
+                print voucher.payment_option,voucher.type,"ggggggggoldddddgggggggggggggggggggggg",voucher.account_id.name
                 # fallback on account of voucher
                 account_id = voucher.account_id.id
             sign = voucher.type == 'payment' and -1 or 1
@@ -1387,11 +1398,13 @@ class account_voucher(osv.osv):
         move_pool = self.pool.get('account.move')
         move_line_pool = self.pool.get('account.move.line')
         for voucher in self.browse(cr, uid, ids, context=context):
+            print voucher,"why----------------------------",voucher.move_id
             local_context = dict(context, force_company=voucher.journal_id.company_id.id)
             if voucher.move_id:
                 continue
             company_currency = self._get_company_currency(cr, uid, voucher.id, context)
             current_currency = self._get_current_currency(cr, uid, voucher.id, context)
+            print "====================now work"
             # we select the context to use accordingly if it's a multicurrency case or not
             context = self._sel_context(cr, uid, voucher.id, context)
             # But for the operations made by _convert_amount, we always need to give the date in the context
@@ -1404,17 +1417,21 @@ class account_voucher(osv.osv):
             # Create the first line of the voucher
             move_line_id = move_line_pool.create(cr, uid, self.first_move_line_get(cr,uid,voucher.id, move_id, company_currency, current_currency, local_context), local_context)
             move_line_brw = move_line_pool.browse(cr, uid, move_line_id, context=context)
+            print move_id,"information===========",move_line_id
             line_total = move_line_brw.debit - move_line_brw.credit
+            print "ememememememmememmememememememememememememememe",line_total
             rec_list_ids = []
             if voucher.type == 'sale':
                 line_total = line_total - self._convert_amount(cr, uid, voucher.tax_amount, voucher.id, context=ctx)
             elif voucher.type == 'purchase':
                 line_total = line_total + self._convert_amount(cr, uid, voucher.tax_amount, voucher.id, context=ctx)
             # Create one move line per voucher line where amount is not 0.0
+            print "hghghhghghghghghghghbefore create voucher",line_total
             line_total, rec_list_ids = self.voucher_move_line_create(cr, uid, voucher.id, line_total, move_id, company_currency, current_currency, context)
 
             # Create the writeoff line if needed
             ml_writeoff = self.writeoff_move_line_get(cr, uid, voucher.id, line_total, move_id, name, company_currency, current_currency, local_context)
+            print line_total,rec_list_ids,"asoooooooooooooooooooooooooooooooooooo0000000000",ml_writeoff
             if ml_writeoff:
                 move_line_pool.create(cr, uid, ml_writeoff, local_context)
             # We post the voucher.
@@ -1430,6 +1447,7 @@ class account_voucher(osv.osv):
             for rec_ids in rec_list_ids:
                 if len(rec_ids) >= 2:
                     reconcile = move_line_pool.reconcile_partial(cr, uid, rec_ids, writeoff_acc_id=voucher.writeoff_acc_id.id, writeoff_period_id=voucher.period_id.id, writeoff_journal_id=voucher.journal_id.id)
+        print "done everything"
         return True
 
 class account_voucher_line(osv.osv):

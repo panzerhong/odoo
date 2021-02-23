@@ -1,158 +1,274 @@
 <?xml version="1.0" encoding="utf-8"?>
 <openerp>
-<data>
-<template id="report_invoice_document">
-    <t t-call="report.external_layout">
-        <div class="page">
-            <div class="row">
-                <div class="col-xs-5 col-xs-offset-7">
-                    <address t-field="o.partner_id"
-                        t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}' />
-                    <span t-if="o.partner_id.vat">TIN: <span t-field="o.partner_id.vat"/></span>
-                </div>
-            </div>
+    <data>
+        <template id="report_invoice_document">
+            <t t-call="report.external_layout_invoice">
+                <div class="page" style="font-family: Helvetica, Khmer OS; ">
+                    <!-- <t t-if="o.type == 'out_invoice'"> -->
+                    <t>
+                        <div class="text-center" style="font-size:17px">បង្កាន់ដៃ</div>
+                        <div class="text-center" style="font-size:17px">
+                            <strong>Receipt</strong>
+                        </div>
+                    </t>
+                    <strong>
+                        <span style="font-size:13px">អតិថិជន / Customer:</span>
+                    </strong>
 
-            <h2>
-                <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Invoice</span>
-                <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
-                <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Draft Invoice</span>
-                <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Cancelled Invoice</span>
-                <span t-if="o.type == 'out_refund'">Refund</span>
-                <span t-if="o.type == 'in_refund'">Supplier Refund</span>
-                <span t-if="o.type == 'in_invoice'">Supplier Invoice</span>
-                <span t-field="o.number"/>
-            </h2>
+                    <table class="table table-bordered" style="border:1px solid black;">
 
-            <div class="row mt32 mb32">
-                <div class="col-xs-2" t-if="o.name">
-                    <strong>Description:</strong>
-                    <p t-field="o.name"/>
-                </div>
-                <div class="col-xs-2" t-if="o.date_invoice">
-                    <strong>Invoice Date:</strong>
-                    <p t-field="o.date_invoice"/>
-                </div>
-                <div class="col-xs-2" t-if="o.origin">
-                    <strong>Source:</strong>
-                    <p t-field="o.origin"/>
-                </div>
-                <div class="col-xs-2" t-if="o.partner_id.ref">
-                    <strong>Customer Code:</strong>
-                    <p t-field="o.partner_id.ref"/>
-                </div>
-                <div class="col-xs-2" t-if="o.reference">
-                    <strong>Reference:</strong>
-                    <p t-field="o.reference"/>
-                </div>
-            </div>
-
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th class="text-right">Unit Price</th>
-                        <th class="text-right" groups="sale.group_discount_per_so_line">Discount (%)</th>
-                        <th class="text-right">Taxes</th>
-                        <th class="text-right">Amount</th>
-                    </tr>
-                </thead>
-                <tbody class="invoice_tbody">
-                    <tr t-foreach="o.invoice_line" t-as="l">
-                        <td><span t-field="l.name"/></td>
-                        <td>
-                            <span t-field="l.quantity"/>
-                            <span t-field="l.uos_id"  groups="product.group_uom"/>
-                        </td>
-                        <td class="text-right">
-                            <span t-field="l.price_unit"/>
-                        </td>
-                        <td class="text-right" groups="sale.group_discount_per_so_line"><span t-field="l.discount"/></td>
-                        <td class="text-right">
-                            <span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/>
-                        </td>
-                        <td class="text-right">
-                            <span t-field="l.price_subtotal" 
-                                t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="row">
-                <div class="col-xs-4 pull-right">
-                    <table class="table table-condensed">
-                        <tr class="border-black">
-                            <td><strong>Total Without Taxes</strong></td>
-                            <td class="text-right">
-                                <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        <tr>
+                            <th style="width:150px; border:1px solid black;">
+                                <span style="font-size:11px;">ឈ្មោះក្រុមហ៊ុន ឬអតិថិជន៖
+                                    <br/>
+                                    Customer Name
+                                </span>
+                            </th>
+                            <th style="font-size:11px; border:1px solid black;" colspan="2">
+                                <span t-field="o.partner_id.name"/>
+                            </th>
+                            <th style="width:123px; border:1px solid black; ">
+                                <strong>
+                                    <span style="font-size:11px;">លេខរៀងបង្កាន់ដៃ៖ Receipt No:</span>
+                                </strong>
+                            </th>
+                            <th style="height:50px; border:1px solid black;">
+                                <span t-field="o.number" style="font-size:12px"/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="width:150px; border:1px solid black;">
+                                <span style="font-size:11px;">អាស័យដ្ឋាន <br></br> Customer Address:
+                                </span>
+                            </th>
+                            <th style="font-size:11px; border:1px solid black;" colspan="2">
+                                <span t-if="o.partner_id.street" t-field="o.partner_id.street"/>
+                                <br/>
+                                <span t-field="o.partner_id.street2"/>
+                                <br/>
+                                <span t-field="o.partner_id.city"/>
+                                <span t-field="o.partner_id.state_id"/>
+                                <span t-field="o.partner_id.country_id"/>
+                                <br/>
+                                <span t-field="o.partner_id.zip"/>
+                                <br/>
+                            </th>
+                            <th style="width:123px; border:1px solid black;">
+                                <strong>
+                                    <span style="font-size:11px">កាលបរិច្ឆេទ៖<br></br>Date៖
+                                    </span>
+                                </strong>
+                            </th>
+                            <th style="width:123px; border:1px solid black;">
+                                <span style="font-size:11px">
+                                    <span t-field="o.date_invoice"/>
+                                </span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td style="width:150px; border:1px solid black;">
+                                <strong>
+                                    <span style="font-size:11px;">លេខទំនាក់ទំនង៖<br></br>Telephone៖
+                                    </span>
+                                </strong>
+                            </td>
+                            <td style="width:150px; border:1px solid black;" colspan="2">
+                                <span t-if="o.partner_id.mobile">
+                                    <span t-field="o.partner_id.mobile"/>
+                                </span>
+                                <span t-if="o.partner_id.phone">
+                                    <span t-field="o.partner_id.phone"/>
+                                </span>
+                            </td>
+                            <td style="width:123px; border:1px solid black;">
+                                <strong>
+                                    <span style="font-size:11px;">កាលបរិច្ឆេទចូល<br></br>Check In
+                                    </span>
+                                </strong>
+                            </td>
+                            <td style="width:150px; border:1px solid black;">
+                                <span t-field="o.checkin"/>
                             </td>
                         </tr>
                         <tr>
-                            <td>Taxes</td>
-                            <td class="text-right">
-                                <span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                            <td style="width:123px; border:1px solid black;">
+                                <strong>
+                                    <span style="font-size:11px;">សារអេឡិចត្រូនិក៖<br></br>Email៖
+                                    </span>
+                                </strong>
+                            </td>
+                            <td style="width:150px; border:1px solid black;" colspan="2">
+                                <span t-field="o.partner_id.email"/>
+                            </td>
+                            <td style="width:123px; border:1px solid black;">
+                                <strong>
+                                    <span style="font-size:11px;">កាលបរិច្ឆេទចេញ<br></br>Check Out
+                                    </span>
+                                </strong>
+                            </td>
+                            <td style="width:150px; border:1px solid black;">
+                                <span t-field="o.checkout"/>
                             </td>
                         </tr>
-                        <tr class="border-black">
-                            <td><strong>Total</strong></td>
-                            <td class="text-right">
-                                 <span t-field="o.amount_total" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        <tr t-if="o.partner_id.vattin">
+                            <td colspan="2" style="width:123px;border:1px solid black;">
+                                <span style="font-size:11px;">
+                                    <strong>លេខអតសញ្ញាណកម្ម អតប (VATTIN):</strong>
+                                </span>
+                            </td>
+                            <td colspan="3" style="width:123px;border:1px solid black;">
+                                <span style="font-size:11px; letter-spacing: 5px;" t-field="o.partner_id.vattin"/>
                             </td>
                         </tr>
                     </table>
-                </div>
-            </div>
-
-            <div class="row" t-if="o.tax_line">
-                <div class="col-xs-6">
-                    <table class="table table-condensed">
+                    <div class="row mt32"></div>
+                    <table class="table table-striped" style="border:1px solid black;">
                         <thead>
-                            <tr>
-                                <th>Tax</th>
-                                <th class="text-right">Base</th>
-                                <th class="text-right">Amount</th>
-                            </tr>
+                           <tr>
+                              <th style="border:1px solid black; width: 12px">
+                                 <div style="font-size:12px">ល.រ</div>
+                                 <div style="font-size:12px">No</div>
+                              </th>
+                              <th style="border:1px solid black; width:350px">
+                                 <div style="font-size:12px">បរិយាយមុខទំនិញ</div>
+                                 <div style="font-size:12px">Description</div>
+                              </th>
+                              <th style="border:1px solid black; width:80px">
+                                 <div style="font-size:12px">បរិមាណ</div>
+                                 <div style="font-size:12px">Quantity</div>
+                              </th>
+                              <th style="border:1px solid black;width:100px">
+                                 <div style="font-size:12px">ថ្លៃឯកតា</div>
+                                 <div style="font-size:12px">Unit Price</div>
+                              </th>
+                              <th style="border:1px solid black;width:100px">
+                                 <div style="font-size:12px">ថ្លៃទំនិញ</div>
+                                 <div style="font-size:12px">Amount</div>
+                              </th>
+                           </tr>
                         </thead>
-                        <tbody>
-                            <tr t-foreach="o.tax_line" t-as="t">
-                                <td><span t-field="t.name"/></td>
-                                <td class="text-right">
-                                    <span t-field="t.base"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                        <tbody class="invoice_tbody">
+                            <tr t-foreach="o.invoice_line" t-as="l" style="page-break-inside:avoid">
+                                <td style="border:1px solid black; font-size:12px"><span t-esc="l_index+1"/></td>
+                                <td style="border:1px solid black; font-size:12px">
+                                <div style="font-size: 12px">Accommodation Fee</div> <br/>
+                                <t t-if="l.discount != 0.0">Discount:
+                                    <span t-esc="l.discount"/>%
+                                </t>
                                 </td>
-                                <td class="text-right">
-                                    <span t-field="t.amount"
-                                        t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                                <td style="border:1px solid black; font-size:12px">
+                                    <span t-esc="'{0:,.2f}'.format(l.quantity)"/>
+                                    <span t-field="l.uos_id" groups="product.group_uom"/>
+                                </td>
+                                <td style="border:1px solid black; font-size:12px">
+                                    $ <span t-esc="'{0:,.2f}'.format(l.price_unit)"/>
+                                </td>
+                                <td style="border:1px solid black; font-size:12px">
+                                    $ <span t-esc="'{0:,.2f}'.format(l.price_subtotal)" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/>
+                                </td>
+                            </tr>
+                            <tr style="page-break-inside:avoid">
+                                <td colspan="4" style="font-size:12px;text-align:right">Subtotal:</td>
+                                <td style="border:1px solid black; font-size:12px">
+                                 $<t t-esc="'{0:,.2f}'.format(o.amount_untaxed)"/>
+                                </td>
+                            </tr>
+                            <tr style="page-break-inside:avoid">
+                                <td colspan="4" style="font-size:12px;text-align:right">ACCO (2%):</td>
+                                <td style="border:1px solid black; font-size:12px">
+                                    $<t t-esc="'{0:,.2f}'.format(o.acco_tax)"/>
+                                </td>
+                            </tr>
+                            <tr style="page-break-inside:avoid">
+                                <td colspan="4" style="font-size:12px;text-align:right">VAT (10%):</td>
+                                <td style="border:1px solid black; font-size:12px">
+                                    $<t t-esc="'{0:,.2f}'.format(o.vat_tax)"/>
+                                </td>
+                            </tr>
+                            <tr style="page-break-inside:avoid">
+                                <td colspan="4" style="font-size:12px;text-align:right">Total:</td>
+                                <td style="border:1px solid black; font-size:12px">
+                                 $<t t-esc="'{0:,.2f}'.format(o.amount_total)"/>
+                                </td>
+                            </tr>
+                            <tr style="page-break-inside:avoid" t-if="o.residual != 0.0 and o.residual != o.amount_total">
+                                <td colspan="4" style="font-size:12px;text-align:right">Balance:</td>
+                                <td style="border:1px solid black; font-size:12px">
+                                 $
+                                 <t t-esc="'{0:,.2f}'.format(o.residual)"/>
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                     </table>
+
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-8 pull-right">
+                            <!-- <span t-if="o.residual != o.amount_total" style="font-size:10px"> -->
+                            <span style="font-size: 12px ">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr class="border-black">
+                                            <th>
+                                                Payment
+                                            </th>
+                                            <th>
+                                                Amount
+                                            </th>
+                                            <th>
+                                                Date
+                                            </th>
+                                            <th>
+                                                Folio No.
+                                            </th>
+                                            <th>
+                                                Receipt No.
+                                            </th>
+                                            <th>
+                                                Remark
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="o.payment_ids" t-as="l" style="page-break-inside:avoid">
+                                            <td>
+                                                <span t-field="l.journal_id"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.type == 'out_invoice' and '{0:,.2f}'.format(l.credit) or o.type=='out_refund' and '{0:,.2f}'.format(l.debit)"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="l.date"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.folio_no.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="o.receipt_no"/>
+                                            </td>
+                                            <td>
+                                                <t t-foreach="l.move_id.line_id" t-as="m">
+                                                    <t t-if="m.debit!=0.0">
+                                                        <span t-field="m.name"/>
+                                                    </t>
+                                                </t>
+                                                <span t-field="l.ref"/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </t>
+        </template>
 
-            <p t-if="o.comment">
-                <strong>Comment:</strong>
-                <span t-field="o.comment"/>
-            </p>
-            <p t-if="o.payment_term.note">
-                <strong>Payment Term:</strong>
-                <span t-field="o.payment_term.note"/>
-            </p>
-            <p t-if="o.fiscal_position.note">
-                <strong>Fiscal Position Remark:</strong>
-                <span t-field="o.fiscal_position.note"/>
-            </p>
-        </div>
-    </t>
-</template>
-
-<template id="report_invoice">
-    <t t-call="report.html_container">
-        <t t-foreach="doc_ids" t-as="doc_id">
-            <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'account.report_invoice_document')"/>
-        </t>
-    </t>
-</template>
-</data>
+        <template id="report_invoice">
+            <t t-call="report.html_container">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <t t-raw="translate_doc(doc_id, doc_model, 'partner_id.lang', 'account.report_invoice_document')"/>
+                </t>
+            </t>
+        </template>
+    </data>
 </openerp>

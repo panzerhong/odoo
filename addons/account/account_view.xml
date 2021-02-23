@@ -2522,9 +2522,9 @@
             parent="menu_finance_receivables"
             action="base.action_partner_customer_form" sequence="100"/>
 
-        <menuitem id="menu_account_supplier" name="Suppliers"
+        <!-- <menuitem id="menu_account_supplier" name="Suppliers"
             parent="menu_finance_payables"
-            action="base.action_partner_supplier_form" sequence="100"/>
+            action="base.action_partner_supplier_form" sequence="100"/> -->
 
         <!-- Account Reports -->
         <record id="view_account_financial_report_form" model="ir.ui.view">

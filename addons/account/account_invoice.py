@@ -68,6 +68,8 @@ class account_invoice(models.Model):
         self.amount_tax = sum(line.amount for line in self.tax_line)
         self.amount_total = self.amount_untaxed + self.amount_tax
 
+    
+
     @api.model
     def _default_journal(self):
         inv_type = self._context.get('type', 'out_invoice')
@@ -310,6 +312,13 @@ class account_invoice(models.Model):
     commercial_partner_id = fields.Many2one('res.partner', string='Commercial Entity',
         related='partner_id.commercial_partner_id', store=True, readonly=True,
         help="The commercial entity that will be used on Journal Entries for this invoice")
+    
+    folio_no = fields.Many2one('hotel.folio', string='Folio Number')
+    receipt_no = fields.Char('Receipt No')
+    acco_tax = fields.Float('ACCO (2%)',readonly=True)
+    vat_tax = fields.Float('VAT (10%)',readonly=True)
+    checkin = fields.Date(string='Check In', readonly=True, index=True)
+    checkout = fields.Date(string='Check Out', readonly=True, index=True)
 
     _sql_constraints = [
         ('number_uniq', 'unique(number, company_id, journal_id, type)',
@@ -395,7 +404,7 @@ class account_invoice(models.Model):
             default_model='account.invoice',
             default_res_id=self.id,
             default_use_template=bool(template),
-            default_template_id=template and template.id or False,
+            default_template_id=template.id,
             default_composition_mode='comment',
             mark_invoice_as_sent=True,
         )
@@ -410,6 +419,27 @@ class account_invoice(models.Model):
             'target': 'new',
             'context': ctx,
         }
+
+
+    @api.constrains('amount_untaxed')   
+    def compute_taxes(self):
+        print "========compute_taxes"
+        sub_total=0
+        for line in self.invoice_line:
+            acco_found = False
+            for tax in line.invoice_line_tax_id:
+                if "ACCO" in tax.name:
+                    acco_found = True
+            if acco_found:
+                sub_total = sub_total + line.price_subtotal
+        
+        self.acco_tax = sub_total*0.02
+        self.vat_tax = self.amount_tax - sub_total*0.02
+
+
+
+
+
 
     @api.multi
     def confirm_paid(self):
@@ -432,8 +462,8 @@ class account_invoice(models.Model):
         fiscal_position = False
         bank_id = False
 
-        p = self.env['res.partner'].browse(partner_id or False)
         if partner_id:
+            p = self.env['res.partner'].browse(partner_id)
             rec_account = p.property_account_receivable
             pay_account = p.property_account_payable
             if company_id:
@@ -461,6 +491,7 @@ class account_invoice(models.Model):
                 account_id = pay_account.id
                 payment_term_id = p.property_supplier_payment_term.id
             fiscal_position = p.property_account_position.id
+            bank_id = p.bank_ids and p.bank_ids[0].id or False
 
         result = {'value': {
             'account_id': account_id,
@@ -468,11 +499,8 @@ class account_invoice(models.Model):
             'fiscal_position': fiscal_position,
         }}
 
-        if type in ('in_invoice', 'out_refund'):
-            bank_ids = p.commercial_partner_id.bank_ids
-            bank_id = bank_ids[0].id if bank_ids else False
+        if type in ('in_invoice', 'in_refund'):
             result['value']['partner_bank_id'] = bank_id
-            result['domain'] = {'partner_bank_id':  [('id', 'in', bank_ids.ids)]}
 
         if payment_term != payment_term_id:
             if payment_term_id:
@@ -1009,6 +1037,9 @@ class account_invoice(models.Model):
 
     @api.multi
     def action_cancel(self):
+        if self._uid not in [user.id for user in self.env['res.groups'].search([('name','=','Hotel Management/ Manager')]).users]:
+            raise except_orm(_('Access Error'),
+                             _("You are not allow to cancel this record"))
         moves = self.env['account.move']
         for inv in self:
             if inv.move_id:
