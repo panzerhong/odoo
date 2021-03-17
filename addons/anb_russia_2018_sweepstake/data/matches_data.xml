@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="match_ru_sa" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ru_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.sa_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-14 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_eg_ur" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.eg_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.uy_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-15 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_mo_ir" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ma_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ir_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-15 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pt_es" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pt_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.es_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-15 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_fr_au" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.fr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.au_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 10:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ar_is" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ar_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.is_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 13:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pe_dk" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pe_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.dk_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 16:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_hr_ng" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.hr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ng_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-16 19:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_cr_rs" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.cr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.rs_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-17 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_de_mx" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.de_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.mx_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-17 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_br_ch" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.br_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ch_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-17 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_se_sk" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.se_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.kr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-18 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_be_pa" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.be_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pa_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-18 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_tn_en" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.tn_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.en_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-18 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_co_jp" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.co_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.jp_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-19 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pl_sn" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pl_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.sn_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-19 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ru_eg" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ru_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.eg_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-19 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pt_ma" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pt_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ma_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-20 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_uy_sa" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.uy_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.sa_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-20 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ir_es" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ir_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.es_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-20 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_dk_au" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.dk_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.au_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-21 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_fr_pe" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.fr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pe_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-21 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ar_hr" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ar_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.hr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-21 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_br_cr" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.br_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.cr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-22 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ng_is" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ng_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.is_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-22 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_rs_ch" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.rs_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ch_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-22 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_be_tn" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.be_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.tn_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-23 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_kr_mx" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.kr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.mx_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-23 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_de_se" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.de_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.se_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-23 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_en_pa" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.en_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pa_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-24 12:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_jp_sn" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.jp_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.sn_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-24 15:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pl_co" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pl_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.co_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-24 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_uy_ru" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.uy_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ru_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-25 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_sa_eg" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.sa_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.eg_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-25 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_es_ma" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.es_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ma_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-25 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ir_pt" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ir_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pt_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-25 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_au_pe" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.au_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pe_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-26 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_dk_fr" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.dk_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.fr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-26 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ng_ar" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ng_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.ar_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-26 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_is_hr" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.is_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.hr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-26 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_kr_de" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.kr_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.de_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-27 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_mx_se" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.mx_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.se_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-27 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_rs_br" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.rs_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.br_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-27 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_ch_cr" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.ch_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.cr_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-27 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_jp_pl" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.jp_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.pl_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-28 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_sn_co" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.sn_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.co_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-28 14:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_pa_tn" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.pa_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.tn_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-28 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+        <record id="match_en_be" model="rwc.match">
+            <field name="team_home" ref="anb_russia_2018_sweepstake.en_team"/>
+            <field name="team_away" ref="anb_russia_2018_sweepstake.be_team"/>
+            <field name="date" eval="DateTime.strptime('2018-06-28 18:00', '%Y-%m-%d %H:%M')"/>
+            <field name="match_round" eval="'group_phase'"/>
+        </record>
+
+    </data>
+</odoo>

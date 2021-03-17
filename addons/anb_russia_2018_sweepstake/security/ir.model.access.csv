@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rwc_player_player,rwc.player player,model_rwc_player,sweepstake_player_group_user,1,1,0,0
+access_rwc_player_admin,rwc.player admin,model_rwc_player,sweepstake_admin_group_user,1,1,1,1
+access_rwc_bet_player,rwc.bet player,model_rwc_bet,sweepstake_player_group_user,1,1,1,1
+access_rwc_bet_admin,rwc.bet admin,model_rwc_bet,sweepstake_admin_group_user,1,1,1,1
+access_rwc_match_player,rwc.match player,model_rwc_match,sweepstake_player_group_user,1,0,0,0
+access_rwc_match_admin,rwc.match admin,model_rwc_match,sweepstake_admin_group_user,1,1,1,1
+access_rwc_team_player,rwc.team player,model_rwc_team,sweepstake_player_group_user,1,0,0,0
+access_rwc_team_admin,rwc.team admin,model_rwc_team,sweepstake_admin_group_user,1,1,1,1

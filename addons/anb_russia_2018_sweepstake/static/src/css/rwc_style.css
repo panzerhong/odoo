@@ -1,0 +1,113 @@
+/* MAIN styles */
+
+div.rwc-help-background {
+    background: url('../../description/rwc-logo.png') no-repeat;
+    top: 1%;
+    left: 1%;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.12;
+}
+
+
+/* PLAYER styles */
+
+div.player-pos {
+    width: 10%;
+    float: left;
+    padding-left: 2%;
+}
+
+div.rwc-player-score {
+    font-size: 18px;
+    padding: 1px 0px 1px 0px;
+    border-radius: 50px;
+    background: #7c7bad;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* MATCH styles */
+
+div.match-state {
+    width: 40px;
+    height: 9px;
+    display: inline-block;
+    vertical-align: top;
+    opacity: 0.7;
+    color: #ffffff;
+}
+
+div.match-state.finished {
+    background: #7c7bad;
+}
+
+div.match-state.to-play {
+    background: #00ccff;
+}
+
+div.match-round {
+    width: 100%;
+    padding: 0% 0% 4% 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #7c7bad;
+    font-weight: bold;
+}
+
+div.match-display-name {
+    width: 64%;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+div.home-flag {
+    width: 18%;
+}
+
+div.home-team {
+    width: 22%;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+div.home-score {
+    width: 9%;
+    font-size: 18px;
+    margin-left: 1%;
+    padding: 1px 0px 1px 0px;
+    border-radius: 50px;
+    background: #7c7bad;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+div.away-score {
+    width: 9%;
+    font-size: 18px;
+    margin-right: 1%;
+    padding: 1px 0px 1px 0px;
+    border-radius: 100px;
+    background: #7c7bad;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+}
+
+div.away-team {
+    width: 22%;
+    text-align: right;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+div.away-flag {
+    width: 16%;
+    margin-left: 2%;
+}

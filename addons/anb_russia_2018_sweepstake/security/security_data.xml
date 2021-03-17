@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- CATEGORY -->
+
+        <record id="ir_module_category_sweepstake" model="ir.module.category">
+            <field name="name">Sweepstake</field>
+            <field name="description">Set the responsability of the user in the sweepstake game</field>
+            <field name="sequence">16</field>
+        </record>
+
+
+        <!-- GROUPS -->
+
+        <record id="sweepstake_player_group_user" model="res.groups">
+            <field name="name">Player</field>
+            <field name="category_id" ref="ir_module_category_sweepstake"/>
+            <field name="comment">The user will be able to play the sweepstake.</field>
+        </record>
+
+        <record id="sweepstake_admin_group_user" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="ir_module_category_sweepstake"/>
+            <field name="comment">The user will be able to play the sweepstake and to manage players, bets, matches, teams...</field>
+            <field name="implied_ids" eval="[(4, ref('anb_russia_2018_sweepstake.sweepstake_player_group_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+
+        <!-- RULES -->
+
+        <record model="ir.rule" id="rwc_bet_restriction_player_a">
+            <field name="name">bets: see only your bets or finished bets A</field>
+            <field name="model_id" ref="model_rwc_bet"/>
+            <field name="domain_force">[('player_id.user_id.id', '=', user.id)]</field>
+            <field name="groups" eval="[
+                (4, ref('anb_russia_2018_sweepstake.sweepstake_player_group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <record model="ir.rule" id="rwc_bet_restriction_player_b">
+            <field name="name">bets: see only your bets or finished bets B</field>
+            <field name="model_id" ref="model_rwc_bet"/>
+            <field name="domain_force">[('state', '=', 'finished')]</field>
+            <field name="groups" eval="[
+                (4, ref('anb_russia_2018_sweepstake.sweepstake_player_group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="rwc_bet_restriction_admin">
+            <field name="name">bets: see all bets</field>
+            <field name="model_id" ref="model_rwc_bet"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[
+                (4, ref('anb_russia_2018_sweepstake.sweepstake_admin_group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <record model="ir.rule" id="rwc_player_restriction_player_a">
+            <field name="name">players: edit only your player A</field>
+            <field name="model_id" ref="model_rwc_player"/>
+            <field name="domain_force">[('user_id.id', '=', user.id)]</field>
+            <field name="groups" eval="[
+                (4, ref('anb_russia_2018_sweepstake.sweepstake_player_group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+        <record model="ir.rule" id="rwc_player_restriction_player_b">
+            <field name="name">players: edit only your player B</field>
+            <field name="model_id" ref="model_rwc_player"/>
+            <field name="domain_force">[('user_id.id', '!=', user.id)]</field>
+            <field name="groups" eval="[
+                (4, ref('anb_russia_2018_sweepstake.sweepstake_player_group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record model="ir.rule" id="rwc_player_restriction_admin">
+            <field name="name">players: edit all players</field>
+            <field name="model_id" ref="model_rwc_player"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[
+                (4, ref('anb_russia_2018_sweepstake.sweepstake_admin_group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

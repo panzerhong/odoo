@@ -1,0 +1,811 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* anb_russia_2018_sweepstake
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-19 22:08+0200\n"
+"PO-Revision-Date: 2018-06-26 13:37+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_player
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_player
+msgid ""
+"A manager can bet whenever he wants and modify other players\n"
+"                    bets. So the manager must be a person in whom everyone "
+"trust,\n"
+"                    because he could do tricks to win the sweepstake!"
+msgstr ""
+"Un administrador puede apostar cuando quiera y modificar las apuestas de "
+"otros\n"
+"                    jugadores. Así que el administrador debe ser una persona "
+"de  confianza,\n"
+"                    porque ¡podría hacer trampas para ganar la porra!"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_player
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_player
+msgid ""
+"A player cannot bet after the beginning of a match, and\n"
+"                    cannot see the bets made by the rest of the players "
+"until\n"
+"                    the match is set as finished. This way, he/she cannot "
+"defend\n"
+"                    his/her position in the ranking copying the bets of "
+"other\n"
+"                    players who can overtake him/her in the ranking if they\n"
+"                    punctuate with their bet."
+msgstr ""
+"Un jugador no puede apostar después del comienzo de un partido, y\n"
+"                    no puede ver las apuestas hechas por el resto de "
+"jugadores hasta\n"
+"                    que el partido es marcado como finalizado. De esta "
+"manera, él/ella no puede defender\n"
+"                    su posición privilegiada en la clasificación copiando "
+"las apuestas de otros\n"
+"                    jugadores que podrían sobrepasarle en la clasificación "
+"si\n"
+"                    puntúan con su apuesta."
+
+#. module: anb_russia_2018_sweepstake
+#: code:addons/anb_russia_2018_sweepstake/models/sweepstake.py:235
+#: sql_constraint:rwc.bet:0
+#, python-format
+msgid "A player cannot have more than one bet in a match."
+msgstr "Un jugador no puede tener más de una apuesta en un partido."
+
+#. module: anb_russia_2018_sweepstake
+#: code:addons/anb_russia_2018_sweepstake/models/sweepstake.py:89
+#: sql_constraint:rwc.player:0
+#, python-format
+msgid "A user cannot have more than one participant."
+msgstr "Un usuario no puede tener más de un jugador asignado."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_bet
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_bet
+msgid "Add a bet to try to guess the score of a match."
+msgstr "Añade una apuesta para intentar adivinar el resultado de un partido."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_match
+msgid "Add a new match to keep on betting with your colleagues."
+msgstr "Añade un nuevo partido para continuar apostando con tus compañeros."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_player
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_player
+msgid ""
+"Add as many players as people are going to play the\n"
+"                    sweepstake, it does not matter if they have Odoo "
+"account\n"
+"                    or not."
+msgstr ""
+"Añade tantos jugadores como gente vaya a jugar la\n"
+"                    porra, no importa si tienen cuenta de Odoo\n"
+"                    o no."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_name
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Alias"
+msgstr "Alias"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_avatar
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_score_away
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_score_away
+msgid "Away score"
+msgstr "Resultado visitante"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_team_away
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_team_away
+msgid "Away team"
+msgstr "Equipo visitante"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_match
+msgid ""
+"Be careful with the date of the match you are creating. If\n"
+"                    the current date is later than it, players will not be "
+"able\n"
+"                    to bet through their Odoo accounts."
+msgstr ""
+"Ten cuidado con la fecha del partido que estás creando. Si\n"
+"                    la fecha actual es mayor que ésta, los jugadores no "
+"podrán\n"
+"                    apostar desde sus cuentas de Odoo."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_bet
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_bet
+msgid ""
+"Besides, if you have player rights, you cannot see the\n"
+"                    bets made by the rest of the players until the match is\n"
+"                    set as finished. This way, you cannot defend your "
+"position\n"
+"                    in the ranking copying the bets of other players who "
+"can\n"
+"                    overtake you in the ranking if they punctuate with "
+"their\n"
+"                    bet."
+msgstr ""
+"Además, si sólo tienes permisos de jugador, no podrás ver las\n"
+"                    apuestas hechas por el resto de jugadores hasta que el "
+"partido sea\n"
+"                    marcado como finalizado. De esta manera, no puedes "
+"defender tu posición privilegiada\n"
+"                    en la clasificación copiando las apuestas de otros "
+"jugadores que podrían\n"
+"                    adelantarte en la clasificación si puntuasen con su\n"
+"                    apuesta."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Bet"
+msgstr "Apuesta"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+msgid "Bet Score"
+msgstr "Resultado de la apuesta"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Bet data"
+msgstr "Información de la apuesta"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Bet score"
+msgstr "Resultado de la apuesta"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+msgid "Bet!"
+msgstr "¡Apostar!"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_admin_rwc_open_bet
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_rwc_open_bet
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_bet_ids
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_bet_ids
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_admin_rwc_bet
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_rwc_bet
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Bets"
+msgstr "Apuestas"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_match
+msgid ""
+"By default, all the matches of the phase group of the Russia\n"
+"                    World Cup 2018 are added when this module is installed."
+msgstr ""
+"Por defecto, todos los partidos de la fase de grupos del mundial\n"
+"                    de Rusia 2018 son añadidas al instalar este módulo."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Choose an Odoo user (not required)..."
+msgstr "Elige un usuario de Odoo (no obligatorio)..."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Choose the match..."
+msgstr "Elige el partido..."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+msgid "Choose the player..."
+msgstr "Elige el jugador..."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_bet
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_bet
+msgid "Click to add a bet in any match which has not started yet."
+msgstr ""
+"Haz click para añadir una apuesta en cualquier partido que no haya empezado "
+"todavía."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_match
+msgid "Click to add a new match."
+msgstr "Haz click para añadir un nuevo partido."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_player
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_player
+msgid "Click to add a new player."
+msgstr "Haz click para añadir un nuevo jugador."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_team
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_team
+msgid "Click to add a new teams."
+msgstr "Haz click para añadir un nuevo equipo."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_create_uid
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_create_uid
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_create_uid
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_create_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_create_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_create_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+msgid "Day"
+msgstr "Día"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_display_name
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_display_name
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_display_name
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: anb_russia_2018_sweepstake
+#: selection:rwc.match,match_round:0
+msgid "Final"
+msgstr "Final"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+msgid "Finish"
+msgstr "Finalizar"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+#: selection:rwc.match,state:0
+msgid "Finished"
+msgstr "Finalizado"
+
+#. module: anb_russia_2018_sweepstake
+#: code:addons/anb_russia_2018_sweepstake/models/sweepstake.py:443
+#, python-format
+msgid ""
+"First, create a participant for your user. Ask the game manager for that if "
+"you do not have permissions to create any participants."
+msgstr ""
+"Primero, crea un jugador para tu usuario. Pídeselo al administrador del "
+"juego si no tienes permisos suficientes para crear jugadores."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_flag_away
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_flag_home
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_flag_away
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_flag_home
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_flag
+msgid "Flag"
+msgstr "Bandera"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_full_hit
+msgid "Full hit"
+msgstr "Acierto total"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_full_hits
+msgid "Full hits"
+msgstr "Aciertos totales"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_kanban
+msgid "Full hits:"
+msgstr "Aciertos totales:"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: anb_russia_2018_sweepstake
+#: selection:rwc.match,match_round:0
+msgid "Group phase"
+msgstr "Fase de grupos"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_hit
+msgid "Hit"
+msgstr "Acierto"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_hits
+msgid "Hits"
+msgstr "Aciertos"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_kanban
+msgid "Hits:"
+msgstr "Aciertos:"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_score_home
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_score_home
+msgid "Home score"
+msgstr "Resultado local"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_team_home
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_team_home
+msgid "Home team"
+msgstr "Equipo local"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_team
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_team
+msgid ""
+"However, we decided to allow this just in case the users\n"
+"                    want to play more after the World Cup. But we will "
+"launch\n"
+"                    new sweepstake modules, do not hesitate in suggesting "
+"us\n"
+"                    new functionalities!"
+msgstr ""
+"Sin embargo, hemos decidido permitirlo por si acaso los usuarios\n"
+"                    quieren jugar más después del Mundial. Aún así "
+"publicaremos\n"
+"                    nuevos módulos de porra, ¡no dudes en sugerirnos\n"
+"                    nuevas funcionalidades!"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_id
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_id
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_id
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_id
+msgid "ID"
+msgstr "ID"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_player
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_player
+msgid ""
+"If you create a player without filling in the user field,\n"
+"                    only the game administrators will be able to introduce "
+"his/her\n"
+"                    bets in the database, since this kind of player will not "
+"be\n"
+"                    able to connect to Odoo with his/her own account. "
+"Otherwise,\n"
+"                    if you fill in the user field, the player will have an "
+"Odoo\n"
+"                    account associated, and he/she will be able to bet by\n"
+"                    himself/herself. Just check that his/her Odoo user has "
+"at\n"
+"                    least sweepstake player rights in the Odoo user settings."
+msgstr ""
+"Si creas un jugador sin rellenar el campo usuario,\n"
+"                    sólo los administradores del juego podrán introducir "
+"sus\n"
+"                    apuestas en la base de datos, ya que este tipo de "
+"jugador no podrá\n"
+"                    conectarse a Odoo con su propia cuenta. De otra manera,\n"
+"                    si rellenas el campo usuario, el jugador tendrá una "
+"cuenta de Odoo\n"
+"                    asociada, y él/ella podrá apostar por sí mismo.\n"
+"                    Simplemente comprueba que su usuario de Odoo tiene como\n"
+"                    mínimo permisos de jugador de la porra en la "
+"configuración del usuario de Odoo."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_bet
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_bet
+msgid ""
+"If you have player rights, you are not allowed to create\n"
+"                    or modify a bet of a match which has already started. "
+"So\n"
+"                    pay attention: do not forget to bet before the "
+"beginning\n"
+"                    of a match!"
+msgstr ""
+"Si tienes permisos de jugador, no puedes crear\n"
+"                    o modificar una apuesta de un partido que ya ha "
+"comenzado. Así que\n"
+"                    presta atención: ¡no olvides apostar antes del inicio\n"
+"                    de un partido!"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_match
+msgid ""
+"If you have the game administrator rights, you can add new\n"
+"                    matches, in fact you should do that to add the final "
+"phase\n"
+"                    games."
+msgstr ""
+"Si tienes permisos de administrador de la porra, puedes añadir nuevos\n"
+"                    partidos, de hecho deberías hacerlo para añadir los "
+"partidos\n"
+"                    de la fase final."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet___last_update
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match___last_update
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player___last_update
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team___last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_write_uid
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_write_uid
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_write_uid
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_write_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_write_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_write_date
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: anb_russia_2018_sweepstake
+#: model:res.groups,name:anb_russia_2018_sweepstake.sweepstake_admin_group_user
+msgid "Manager"
+msgstr "Administrador"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_match_id
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_tree
+msgid "Match"
+msgstr "Partido"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+msgid "Match data"
+msgstr "Información del partido"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+msgid "Match score"
+msgstr "Resultado del partido"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_rwc_open_match
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_admin_rwc_match
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_rwc_match
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_tree
+msgid "Matches"
+msgstr "Partidos"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+msgid "My bets"
+msgstr "Mis apuestas"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_team_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: anb_russia_2018_sweepstake
+#: selection:rwc.match,match_round:0
+msgid "Play-off for third place"
+msgstr "3ª/4º puesto"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_player_id
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+#: model:res.groups,name:anb_russia_2018_sweepstake.sweepstake_player_group_user
+msgid "Player"
+msgstr "Jugador"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_admin_rwc_open_player
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_admin_rwc_player
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_tree
+msgid "Players"
+msgstr "Jugadores"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_pos
+msgid "Position"
+msgstr "Posición"
+
+#. module: anb_russia_2018_sweepstake
+#: selection:rwc.match,match_round:0
+msgid "Quarter-finals"
+msgstr "Cuartos de final"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_quiniela
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_quiniela
+msgid "Quiniela"
+msgstr "Quiniela"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_rwc_open_player
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_rwc_player
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_tree
+msgid "Ranking"
+msgstr "Clasificación"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_match_round
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+msgid "Round"
+msgstr "Ronda"
+
+#. module: anb_russia_2018_sweepstake
+#: selection:rwc.match,match_round:0
+msgid "Round of 16"
+msgstr "Octavos"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_score
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_score_stored
+msgid "Score"
+msgstr "Puntos"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_player_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_player_kanban
+msgid "Score:"
+msgstr "Puntos:"
+
+#. module: anb_russia_2018_sweepstake
+#: selection:rwc.match,match_round:0
+msgid "Semi-finals"
+msgstr "Semifinales"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.module.category,description:anb_russia_2018_sweepstake.ir_module_category_sweepstake
+msgid "Set the responsability of the user in the sweepstake game"
+msgstr "Establece la responsabilidad del usuario en el juego de la porra"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_admin_rwc_config
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_bet_state
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_match_state
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+msgid "State"
+msgstr "Estado"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.module.category,name:anb_russia_2018_sweepstake.ir_module_category_sweepstake
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_rwc
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_rwc_sweepstake
+msgid "Sweepstake"
+msgstr "Porra"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+msgid "Team/Player/Score"
+msgstr "Equipo/Jugador/Resultado"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+msgid "Team/Score"
+msgstr "Equipo/Resultado"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_admin_rwc_open_team
+#: model:ir.actions.act_window,name:anb_russia_2018_sweepstake.action_rwc_open_team
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_admin_rwc_team
+#: model:ir.ui.menu,name:anb_russia_2018_sweepstake.menu_rwc_team
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_team_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_team_tree
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_team_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_team_tree
+msgid "Teams"
+msgstr "Equipos"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_team
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_team
+msgid ""
+"The possibility of adding a new team is enabled, but by\n"
+"                    default, every national team of the Russia World Cup "
+"2018\n"
+"                    is added when the module is installed."
+msgstr ""
+"La posibilidad de añadir nuevos equipos está habilitada, pero por\n"
+"                    defecto, todas las seleccionesdel Mundial de Rusia 2018\n"
+"                    son añadidas al instalarse el módulo."
+
+#. module: anb_russia_2018_sweepstake
+#: model:res.groups,comment:anb_russia_2018_sweepstake.sweepstake_admin_group_user
+msgid ""
+"The user will be able to play the sweepstake and to manage players, bets, "
+"matches, teams..."
+msgstr ""
+"El usuario podrá jugar la porra y gestionar jugadores, apuestas, partidos, "
+"equipos..."
+
+#. module: anb_russia_2018_sweepstake
+#: model:res.groups,comment:anb_russia_2018_sweepstake.sweepstake_player_group_user
+msgid "The user will be able to play the sweepstake."
+msgstr "El usuario podrá jugar la porra."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_admin_rwc_match_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_bet_search
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_form
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_kanban
+#: model:ir.ui.view,arch_db:anb_russia_2018_sweepstake.view_rwc_match_search
+#: selection:rwc.match,state:0
+msgid "To play"
+msgstr "Por jugar"
+
+#. module: anb_russia_2018_sweepstake
+#: code:addons/anb_russia_2018_sweepstake/models/sweepstake.py:247
+#: code:addons/anb_russia_2018_sweepstake/models/sweepstake.py:474
+#, python-format
+msgid "Too late to bet! Bets are forbidden after the beginning of the match."
+msgstr ""
+"¡Demasiado tarde para apostar! Las apuestas están prohibidas después del "
+"inicio del partido."
+
+#. module: anb_russia_2018_sweepstake
+#: code:addons/anb_russia_2018_sweepstake/models/sweepstake.py:271
+#, python-format
+msgid "Too late to bet! Bets forbidden after the beginning of the match."
+msgstr ""
+"¡Demasiado tarde para apostar! Las apuestas están prohibidas después del "
+"inicio del partido."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model.fields,field_description:anb_russia_2018_sweepstake.field_rwc_player_user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_match
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_match
+msgid ""
+"When the game is finished, the game administrator must\n"
+"                    freeze it, setting its state to finished. When this "
+"happens,\n"
+"                    the bets of the match are punctuated."
+msgstr ""
+"Cuando el partido finaliza, el administrador del juego debe\n"
+"                    congelarlo, estableciendo su estado como finalizado. "
+"Cuando esto ocurre,\n"
+"                    las apuestas del partido son puntuadas."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_admin_rwc_open_bet
+#: model:ir.actions.act_window,help:anb_russia_2018_sweepstake.action_rwc_open_bet
+msgid ""
+"When you guess that, you win by default 25 points which\n"
+"                    allows you to improve your position in the players "
+"ranking.\n"
+"                    If you do not guess the score but you guess which team "
+"win\n"
+"                    or if both teams reach a draw, you win by default 8 "
+"points.\n"
+"                    Otherwise, you do not win any point."
+msgstr ""
+"Cuando lo adivinas, ganas por defecto 25 puntos que\n"
+"                    te permiten mejorar tu posición en la clasificación de "
+"jugadores.\n"
+"                    Si no aciertas el resultado exacto pero sí quién gana\n"
+"                    o si empatan, ganas por defecto 8 puntos.\n"
+"                    De otra manera, no ganas ningún punto."
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model,name:anb_russia_2018_sweepstake.model_rwc_bet
+msgid "rwc.bet"
+msgstr ""
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model,name:anb_russia_2018_sweepstake.model_rwc_match
+msgid "rwc.match"
+msgstr ""
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model,name:anb_russia_2018_sweepstake.model_rwc_participant
+msgid "rwc.participant"
+msgstr ""
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model,name:anb_russia_2018_sweepstake.model_rwc_player
+msgid "rwc.player"
+msgstr ""
+
+#. module: anb_russia_2018_sweepstake
+#: model:ir.model,name:anb_russia_2018_sweepstake.model_rwc_team
+msgid "rwc.team"
+msgstr ""

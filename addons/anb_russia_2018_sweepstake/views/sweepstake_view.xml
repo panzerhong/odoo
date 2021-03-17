@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- MATCH VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_match_kanban" model="ir.ui.view">
+            <field name="name">rwc.match.kanban</field>
+            <field name="model">rwc.match</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban string="Matches" create="false" edit="false" delete="false">
+                    <field name="display_name"/>
+                    <field name="flag_home"/>
+                    <field name="flag_away"/>
+                    <field name="match_round"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="match-state finished" title="Finished" t-if="record.state.raw_value=='finished'"/>
+                                <div class="match-state to-play" title="To play" t-if="record.state.raw_value!='finished'"/>
+                                <div class="o_kanban_card_header">
+                                    <div class="match-round o_kanban_card_header_title">
+                                        <field name="match_round"/>: <field name="date"/>
+                                    </div>
+                                    <div class="oe_kanban_details" t-if="record.state.raw_value=='finished'">
+                                        <div class="home-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_home', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                        <div class="home-team pull-left">
+                                            <field name="team_home"/>
+                                        </div>
+                                        <div class="home-score pull-left">
+                                            <span t-if="record.state.raw_value=='finished'">
+                                                <field name="score_home"/>
+                                            </span>
+                                        </div>
+                                        <div class="away-score pull-left">
+                                            <span t-if="record.state.raw_value=='finished'">
+                                                <field name="score_away"/>
+                                            </span>
+                                        </div>
+                                        <div class="away-team pull-left">
+                                            <field name="team_away"/>
+                                        </div>
+                                        <div class="away-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_away', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                    </div>
+                                    <div class="oe_kanban_details" t-if="record.state.raw_value!='finished'">
+                                        <div class="home-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_home', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                        <div class="match-display-name pull-left">
+                                            <field name="display_name"/>
+                                        </div>
+                                        <div class="away-flag pull-left">
+                                            <img t-att-src="kanban_image('rwc.match', 'flag_away', record.id.value)" width="45" height="31" class="oe_kanban_avatar"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_rwc_match_tree" model="ir.ui.view">
+            <field name="name">rwc.match.tree</field>
+            <field name="model">rwc.match</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Matches" create="false" edit="false" delete="false" colors="blue:state=='to_play'">
+                    <field name="date"/>
+                    <field name="match_round"/>
+                    <field name="display_name" string="Match"/>
+                    <field name="quiniela"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_match_form" model="ir.ui.view">
+            <field name="name">rwc.match.form</field>
+            <field name="model">rwc.match</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Matches" create="false" edit="false" delete="false">
+                    <header>
+                        <button name="add_your_bet" type="object" string="Bet!" class="oe_highlight" states="to_play"/>
+                        <button name="set_as_finished" type="object" string="Finish" class="oe_highlight" states="to_play" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
+                        <button name="set_as_to_play" type="object" string="To play" states="finished" groups="anb_russia_2018_sweepstake.sweepstake_admin_group_user"/>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" string="Match"/>
+                            </h1>
+                            <h3>
+                                <field name="match_round" readonly="1"/>
+                            </h3>
+                        </div>
+                        <group string="Match score" style="text-align: center;">
+                            <h3>
+                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                            </h3>
+                        </group>
+                        <group string="Match data">
+                            <group>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="quiniela"/>
+                            </group>
+                        </group>
+                        <group string="Bets">
+                            <field name="bet_ids" nolabel="1" widget="one2many_list" context="{'default_match_id': active_id}">
+                                <tree string="Bets" colors="blue:state=='to_play'">
+                                    <field name="date"/>
+                                    <field name="player_id" invisible="1"/>
+                                    <field name="match_id" invisible="1"/>
+                                    <field name="display_name" string="Bet"/>
+                                    <field name="hit"/>
+                                    <field name="full_hit"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form string="Bets">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="display_name" string="Bet"/>
+                                            </h1>
+                                            <label for="player_id" />
+                                            <div class="o_row">
+                                                <field name="player_id" placeholder="Choose the player..."/>
+                                            </div>
+                                            <label for="match_id" invisible="1"/>
+                                            <div class="o_row" invisible="1">
+                                                <field name="match_id" placeholder="Choose the match..."/>
+                                            </div>
+                                        </div>
+                                        <group string="Bet Score" style="text-align: center;">
+                                            <h3>
+                                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                                            </h3>
+                                        </group>
+                                        <group string="Bet data">
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="quiniela"/>
+                                            </group>
+                                            <group>
+                                                <field name="hit"/>
+                                                <field name="full_hit"/>
+                                                <field name="state"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_match" model="ir.actions.act_window">
+            <field name="name">Matches</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.match</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="target">current</field>
+            <field name="context">{'search_default_to_play': 1, 'search_default_group_by_day': 1}</field>
+            <field name="search_view_id" ref="view_rwc_match_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a new match.
+                </p>
+                <p>
+                    Add a new match to keep on betting with your colleagues.
+                </p>
+                <p>
+                    By default, all the matches of the phase group of the Russia
+                    World Cup 2018 are added when this module is installed.
+                </p>
+                <p>
+                    If you have the game administrator rights, you can add new
+                    matches, in fact you should do that to add the final phase
+                    games.
+                </p>
+                <p>
+                    Be careful with the date of the match you are creating. If
+                    the current date is later than it, players will not be able
+                    to bet through their Odoo accounts.
+                </p>
+                <p>
+                    When the game is finished, the game administrator must
+                    freeze it, setting its state to finished. When this happens,
+                    the bets of the match are punctuated.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- BET VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_bet_tree" model="ir.ui.view">
+            <field name="name">rwc.bet.tree</field>
+            <field name="model">rwc.bet</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Bets" colors="blue:state=='to_play'">
+                    <field name="date"/>
+                    <field name="player_id"/>
+                    <field name="display_name" string="Bet"/>
+                    <field name="hit"/>
+                    <field name="full_hit"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_bet_form" model="ir.ui.view">
+            <field name="name">rwc.bet.form</field>
+            <field name="model">rwc.bet</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Bets">
+                    <header>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="to_play,finished"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="display_name" string="Bet"/>
+                            </h1>
+                            <label for="player_id" invisible="1"/>
+                            <div class="o_row" invisible="1">
+                                <field name="player_id" placeholder="Choose the player..."/>
+                            </div>
+                            <label for="match_id"/>
+                            <div class="o_row">
+                                <field name="match_id" placeholder="Choose the match..."/>
+                            </div>
+                        </div>
+                        <group string="Bet score" style="text-align: center;">
+                            <h3>
+                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                            </h3>
+                        </group>
+                        <group string="Bet data">
+                            <group>
+                                <field name="date"/>
+                                <field name="quiniela"/>
+                            </group>
+                            <group>
+                                <field name="hit"/>
+                                <field name="full_hit"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_bet" model="ir.actions.act_window">
+            <field name="name">Bets</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.bet</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="context">{"search_default_to_play": 1, "search_default_my_bets": 1,}</field>
+            <field name="search_view_id" ref="view_rwc_bet_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a bet in any match which has not started yet.
+                </p>
+                <p>
+                    Add a bet to try to guess the score of a match.
+                </p>
+                <p>
+                    When you guess that, you win by default 25 points which
+                    allows you to improve your position in the players ranking.
+                    If you do not guess the score but you guess which team win
+                    or if both teams reach a draw, you win by default 8 points.
+                    Otherwise, you do not win any point.
+                </p>
+                <p>
+                    If you have player rights, you are not allowed to create
+                    or modify a bet of a match which has already started. So
+                    pay attention: do not forget to bet before the beginning
+                    of a match!
+                </p>
+                <p>
+                    Besides, if you have player rights, you cannot see the
+                    bets made by the rest of the players until the match is
+                    set as finished. This way, you cannot defend your position
+                    in the ranking copying the bets of other players who can
+                    overtake you in the ranking if they punctuate with their
+                    bet.
+                </p>
+            </field>
+        </record>
+
+
+        <!-- PLAYER VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_player_kanban" model="ir.ui.view">
+            <field name="name">rwc.player.kanban</field>
+            <field name="model">rwc.player</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban string="Ranking" create="false" delete="false" default_order="score_stored desc">
+                    <field name="name"/>
+                    <field name="pos"/>
+                    <field name="score"/>
+                    <field name="score_stored"/>
+                    <field name="hits"/>
+                    <field name="full_hits"/>
+                    <field name="avatar"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="player-pos" style="width:10%%;float:left;">
+                                    <h1>
+                                        <field name="pos"/>
+                                    </h1>
+                                </div>
+                                <div class="player-content" style="width:89%%;float:left;">
+                                    <div class="o_kanban_image">
+                                        <img t-att-src="kanban_image('rwc.player', 'avatar', record.id.value)" width="60" height="60" class="oe_kanban_avatar"/>
+                                    </div>
+                                    <div class="o_kanban_title">
+                                        <field name="name"/>
+                                        <ul style="font-weight: normal;">
+                                            <li>Hits: <field name="hits"/></li>
+                                            <li>Full hits: <field name="full_hits"/></li>
+                                            <li><field name="score_stored" invisible="1"/></li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <div class="rwc-player-score">
+                                            Score: <field name="score"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="oe_clear"/>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_rwc_player_tree" model="ir.ui.view">
+            <field name="name">rwc.player.tree</field>
+            <field name="model">rwc.player</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Ranking" create="false" delete="false" default_order="score_stored desc">
+                    <field name="pos"/>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="score" invisible="1"/>
+                    <field name="score_stored"/>
+                    <field name="full_hits"/>
+                    <field name="hits"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_player_form" model="ir.ui.view">
+            <field name="name">rwc.player.form</field>
+            <field name="model">rwc.player</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Ranking" create="false" delete="false">
+                    <sheet>
+                        <field name="avatar" widget="image" class="oe_avatar" options="{&quot;size&quot;: [90, 90]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Alias"/>
+                            </h1>
+                            <div class="o_row">
+                                <field name="user_id" placeholder="Choose an Odoo user (not required)..." readonly="1"/>
+                            </div>
+                            <br/>
+                            <div class="o_row">
+                                <label for="pos"/>
+                                <field name="pos"/>
+                                <label for="score" invisible="1"/>
+                                <field name="score" invisible="1"/>
+                                <label for="score_stored"/>
+                                <field name="score_stored"/>
+                                <label for="full_hits"/>
+                                <field name="full_hits"/>
+                                <label for="hits"/>
+                                <field name="hits"/>
+                            </div>
+                        </div>
+                        <group string="Bets">
+                            <field name="bet_ids" nolabel="1" widget="one2many_list" context="{'default_player_id': active_id}">
+                                <tree string="Bets" colors="blue:state=='to_play'" create="false" edit="false" delete="false" domain="[('state', '=', 'finished')]">
+                                    <field name="date"/>
+                                    <field name="player_id" invisible="1"/>
+                                    <field name="match_id" invisible="1"/>
+                                    <field name="display_name" string="Bet"/>
+                                    <field name="hit"/>
+                                    <field name="full_hit"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form string="Bets" create="false" edit="false" delete="false">
+                                    <sheet>
+                                        <div class="oe_title">
+                                            <h1>
+                                                <field name="display_name" string="Bet"/>
+                                            </h1>
+                                            <label for="player_id" invisible="1" />
+                                            <div class="o_row" invisible="1">
+                                                <field name="player_id" placeholder="Choose the player..."/>
+                                            </div>
+                                            <label for="match_id"/>
+                                            <div class="o_row">
+                                                <field name="match_id" placeholder="Choose the match..."/>
+                                            </div>
+                                        </div>
+                                        <group string="Bet score" style="text-align: center;">
+                                            <h3>
+                                                <field name="flag_home" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-right: 2%%; top: 14px;"/>
+                                                <field name="team_home" class="oe_inline" style="margin-right: 5%%;"/> <field name="score_home" style="width:5%%;"/> 
+                                                <field name="score_away" style="width:5%%;"/> <field name="team_away" class="oe_inline"/> 
+                                                <field name="flag_away" widget="image" class="oe_inline" options="{&quot;size&quot;: [45, 31]}" style="margin-left: 2%%; top: 14px;"/>
+                                            </h3>
+                                        </group>
+                                        <group string="Bet data">
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="quiniela"/>
+                                            </group>
+                                            <group>
+                                                <field name="hit"/>
+                                                <field name="full_hit"/>
+                                                <field name="state"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_player" model="ir.actions.act_window">
+            <field name="name">Ranking</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.player</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="target">current</field>
+            <field name="search_view_id" ref="view_rwc_player_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a new player.
+                </p>
+                <p>
+                    Add as many players as people are going to play the
+                    sweepstake, it does not matter if they have Odoo account
+                    or not.
+                </p>
+                <p>
+                    If you create a player without filling in the user field,
+                    only the game administrators will be able to introduce his/her
+                    bets in the database, since this kind of player will not be
+                    able to connect to Odoo with his/her own account. Otherwise,
+                    if you fill in the user field, the player will have an Odoo
+                    account associated, and he/she will be able to bet by
+                    himself/herself. Just check that his/her Odoo user has at
+                    least sweepstake player rights in the Odoo user settings.
+                </p>
+                <p>
+                    A player cannot bet after the beginning of a match, and
+                    cannot see the bets made by the rest of the players until
+                    the match is set as finished. This way, he/she cannot defend
+                    his/her position in the ranking copying the bets of other
+                    players who can overtake him/her in the ranking if they
+                    punctuate with their bet.
+                </p>
+                <p>
+                    A manager can bet whenever he wants and modify other players
+                    bets. So the manager must be a person in whom everyone trust,
+                    because he could do tricks to win the sweepstake!
+                </p>
+            </field>
+        </record>
+
+
+        <!-- TEAM VIEWS AND ACTIONS -->
+
+        <record id="view_rwc_team_tree" model="ir.ui.view">
+            <field name="name">rwc.team.tree</field>
+            <field name="model">rwc.team</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Teams" create="false" edit="false" delete="false">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_rwc_team_form" model="ir.ui.view">
+            <field name="name">rwc.team.form</field>
+            <field name="model">rwc.team</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Teams" create="false" edit="false" delete="false">
+                    <sheet>
+                        <group style="text-align: center;">
+                            <field name="flag" widget="image" options="{&quot;size&quot;: [90, 63]}" nolabel="1" class="oe_inline"/>
+                        </group>
+                        <br/>
+                        <group style="text-align: center;">
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_rwc_open_team" model="ir.actions.act_window">
+            <field name="name">Teams</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rwc.team</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+            <field name="search_view_id" ref="view_rwc_team_search"/>
+            <field name="help" type="html">
+                <div class="rwc-help-background"/>
+                <p class="oe_view_nocontent_create">
+                    Click to add a new teams.
+                </p>
+                <p>
+                    The possibility of adding a new team is enabled, but by
+                    default, every national team of the Russia World Cup 2018
+                    is added when the module is installed.
+                </p>
+                <p>
+                    However, we decided to allow this just in case the users
+                    want to play more after the World Cup. But we will launch
+                    new sweepstake modules, do not hesitate in suggesting us
+                    new functionalities!
+                </p>
+            </field>
+        </record>
+
+
+        <!-- MENUS -->
+
+        <menuitem id="menu_rwc_sweepstake" parent="anb_russia_2018_sweepstake.menu_rwc" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="16" name="Sweepstake"/>
+            <menuitem action="action_rwc_open_match" id="menu_rwc_match" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="16" name="Matches"/>
+            <menuitem action="action_rwc_open_bet" id="menu_rwc_bet" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="17" name="Bets"/>
+            <menuitem action="action_rwc_open_player" id="menu_rwc_player" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="18" name="Ranking"/>
+            <menuitem action="action_rwc_open_team" id="menu_rwc_team" parent="anb_russia_2018_sweepstake.menu_rwc_sweepstake" groups="anb_russia_2018_sweepstake.sweepstake_player_group_user" sequence="19" name="Teams"/>
+    </data>
+</odoo>
