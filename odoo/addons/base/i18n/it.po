@@ -3126,12 +3126,12 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Driver Hardware ESC/POS\n"
+"Driver hardware ESC/POS\n"
 "=======================\n"
 "\n"
-"Questo modulo consente a Odoo di stampare con stampanti compatibili ESC/POS e\n"
-"di aprire i cassetti del registratore di cassa controllati da ESC/POS nel modulo Punto di vendita e gli altri moduli\n"
-"che necessitano tale funzionalità.\n"
+"Questo modulo consente a Odoo di stampare su stampanti compatibili ESC/POS e di aprire casse contanti controllate ESC/POS, nel punto vendita e in altri\n"
+"moduli che necessitano di tale funzionalità.\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_eu_service
@@ -5294,11 +5294,11 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"Dashboard di abbonamento\n"
-"===========================\n"
-"Aggiunta di dashboard per:\n"
-"1) Analizzare i redditi ricorrenti e altri parametri per gli abbonamenti\n"
-"2) Aalizzare le modifiche di abbonamenti per venditore e calcolare il loro valore.\n"
+"Bacheca per vendite in abbonamento\n"
+"===================================\n"
+"Aggiunge bacheche per:\n"
+"1) analisi di ricavi ricorrenti e di altre misure per le sottoscrizioni\n"
+"2) analisi di modifiche delle sottoscrizioni per venditore e calcolo del valore.\n"
 "    "
 
 #. module: base
@@ -5685,8 +5685,8 @@ msgid ""
 "=================================================================================================\n"
 msgstr ""
 "\n"
-"Questo modulo aggiunge la possibilità di visualizzare i dati di Odoo in un foglio di calcolo Google in tempo reale.\n"
-"=================================================================================================\n"
+"Questo modulo aggiunge la possibilità di visualizzare, in fogli di calcolo Google, dati da Odoo in tempo reale.\n"
+"===========================================================================================================\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_social_media
@@ -6647,12 +6647,12 @@ msgid ""
 "    - Generate invoice automatically at fixed intervals\n"
 msgstr ""
 "\n"
-"Modulo di gestione degli abbonamenti.\n"
+"Questo modulo consente di gestione le sottoscrizioni.\n"
 "\n"
 "Funzionalità:\n"
-"    - Crea & modifica abbonamenti\n"
-"    - Modifica abbonamenti con ordini di vendita\n"
-"    - Genera automaticamente fatture a intervalli fissi\n"
+"    - creazione e modifica sottoscrizioni\n"
+"    - modifica sottoscrizioni con ordini di vendita\n"
+"    - generazione automatica di fatture a intervalli fissi\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_purchase_requisition
@@ -7729,6 +7729,8 @@ msgid ""
 "- %(record)r belongs to company %(company)r and %(field)r (%(fname)s: "
 "%(values)s) belongs to another company."
 msgstr ""
+"- %(record)r appartiene all'azienda %(company)r e %(field)r (%(fname)s: "
+"%(values)s) appartiene a un'altra azienda."
 
 #. module: base
 #: code:addons/model.py:0
@@ -7791,7 +7793,7 @@ msgstr "- Questo modulo non crea menù."
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.module_form
 msgid "-This module does not create report."
-msgstr "- Questo modulo non crea report."
+msgstr "- Questo modulo non crea resoconti."
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.module_form
@@ -8215,7 +8217,7 @@ msgstr "<strong>Confermare la password per proseguire</strong>"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodulereference
 msgid "<strong>Reports :</strong>"
-msgstr "<strong>Report:</strong>"
+msgstr "<strong>Resoconti:</strong>"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -8658,7 +8660,7 @@ msgstr "Accesso alla funzionalità di esportazione"
 #: code:addons/api.py:0 code:addons/api.py:0
 #, python-format
 msgid "Access to unauthorized or invalid companies."
-msgstr ""
+msgstr "Accesso ad aziende non autorizzate o non valide."
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_auto_transfer
@@ -8870,6 +8872,8 @@ msgid ""
 "Action %(action_reference)s (id: %(action_id)s) does not exist for button of"
 " type action."
 msgstr ""
+"Azione %(action_reference)s (ID: %(action_id)s) non esistente per pulsanti "
+"di tipo azione."
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_url__help
@@ -8930,17 +8934,17 @@ msgstr "Uso azione"
 #. module: base
 #: model:ir.model,name:base.model_ir_actions_act_window
 msgid "Action Window"
-msgstr "Finestra azione"
+msgstr "Azione finestra"
 
 #. module: base
 #: model:ir.model,name:base.model_ir_actions_act_window_close
 msgid "Action Window Close"
-msgstr "Chiusura finestra azione"
+msgstr "Azione chiusura finestra"
 
 #. module: base
 #: model:ir.model,name:base.model_ir_actions_act_window_view
 msgid "Action Window View"
-msgstr "Vista finestra azione"
+msgstr "Azione visualizzazione finestra"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.ir_sequence_actions
@@ -9873,14 +9877,13 @@ msgstr "In archivio"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Are you sure to execute the automatic merge of your contacts ?"
-msgstr "Sei sicuro di eseguire la fusione automatica dei tuoi contatti?"
+msgstr "Eseguire veramente l'unione automatica dei contatti ?"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid ""
 "Are you sure to execute the list of automatic merges of your contacts ?"
-msgstr ""
-"Sei sicuro di eseguire la lista della fusione automatica dei tuoi contatti?"
+msgstr "Eseguire veramente l'elenco delle unioni automatiche dei contatti?"
 
 #. module: base
 #: model:res.country,name:base.ar
@@ -11754,7 +11757,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_partner_commission
 msgid "Configure resellers commissions on subscription sale"
-msgstr ""
+msgstr "Configura le commissioni dei rivenditori sulle vendite in abbonamento"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_timesheet_enterprise
@@ -12880,7 +12883,7 @@ msgstr "Deduplica contatti"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Deduplicate the other Contacts"
-msgstr "Deduplicare gli altri contatti"
+msgstr "Deduplica gli altri contatti"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_users_form
@@ -13887,7 +13890,7 @@ msgstr "Controllo presenze dipendenti"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_referral
 msgid "Employee Referral"
-msgstr "Referenze dipendente"
+msgstr "Referenza dipendente"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_human_resources_employees
@@ -14039,6 +14042,9 @@ msgid ""
 "\n"
 "%(error)s"
 msgstr ""
+"Errore nella convalida della vista:\n"
+"\n"
+"%(error)s"
 
 #. module: base
 #: code:addons/base/models/ir_ui_menu.py:0
@@ -14179,7 +14185,7 @@ msgstr "Esempi"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Exclude contacts having"
-msgstr "Esclude contacts having"
+msgstr "Escludere contatti con"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module_exclusion__exclusion_id
@@ -14231,12 +14237,12 @@ msgstr ""
 #: model:ir.module.category,name:base.module_category_human_resources_expenses
 #: model:ir.module.module,shortdesc:base.module_hr_expense
 msgid "Expenses"
-msgstr "Note spese"
+msgstr "Spese"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_payroll_expense
 msgid "Expenses in Payslips"
-msgstr "Note spese in busta paga"
+msgstr "Spese in busta paga"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_report_paperformat__report_ids
@@ -14406,7 +14412,7 @@ msgstr "Strumenti aggiuntivi"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_expense_extract
 msgid "Extract data from expense scans to fill them automatically"
-msgstr ""
+msgstr "Estrae i dati dalle spese acquisite per compilarle in modo automatico"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_account_invoice_extract
@@ -15910,7 +15916,7 @@ msgstr "Aiuta a gestire i dipendenti."
 #. module: base
 #: model:ir.module.category,description:base.module_category_human_resources_expenses
 msgid "Helps you manage your expenses."
-msgstr "Aiuta a gestire le note spese."
+msgstr "Aiuta a gestire le spese."
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_inventory_inventory
@@ -16517,7 +16523,7 @@ msgstr "Immagine a 512"
 #. module: base
 #: model:ir.model,name:base.model_image_mixin
 msgid "Image Mixin"
-msgstr ""
+msgstr "Mixin immagine"
 
 #. module: base
 #: code:addons/image.py:0
@@ -18818,7 +18824,7 @@ msgstr "Mauritius"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_partner_merge_automatic_wizard__maximum_group
 msgid "Maximum of Group of Contacts"
-msgstr "Massimo del gruppo di contatti"
+msgstr "Massimo per gruppo di contatti"
 
 #. module: base
 #: model:res.country,name:base.yt
@@ -18879,7 +18885,7 @@ msgstr "Unisci automaticamente"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Merge Automatically all process"
-msgstr "Unisci Automaticamente tutti i processi"
+msgstr "Unisci tutti con elaborazione automatica"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
@@ -18899,7 +18905,7 @@ msgstr "Procedura per unire i partner"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Merge the following contacts"
-msgstr "Unisci i seguenti contatti"
+msgstr "Unire i seguenti contatti"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
@@ -21360,6 +21366,16 @@ msgstr ""
 "Al momento non sono possibili operazioni sui moduli, riprovare più tardi o contattare l'amministratore di sistema."
 
 #. module: base
+#: code:addons/base/models/ir_actions_report.py:0
+#, python-format
+msgid ""
+"Odoo is unable to merge the PDFs attached to the following records:\n"
+"%s\n"
+"\n"
+"Please exclude them from the selection to continue. It's possible to still retrieve those PDFs by selecting each of the affected records individually, which will avoid merging."
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,shortdesc:base.module_odoo_referral
 msgid "Odoo referral program"
 msgstr "Programma referenze Odoo"
@@ -23477,7 +23493,7 @@ msgstr "Data di riferimento"
 #. module: base
 #: model:ir.module.category,name:base.module_category_human_resources_referrals
 msgid "Referrals"
-msgstr ""
+msgstr "Referenze"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner__parent_id
@@ -24090,7 +24106,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_subscription_dashboard
 msgid "Sale Subscription Dashboard"
-msgstr "Dashboard dell'Abbonamento"
+msgstr "Bacheca vendite in abbonamento"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_purchase
@@ -24338,7 +24354,7 @@ msgstr "Rif. vista di ricerca"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Search duplicates based on duplicated data in"
-msgstr "Cerca duplicati basati sulla data di duplicazione"
+msgstr "Ricercare duplicati in base a copie di dati in"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_module_filter
@@ -24412,10 +24428,10 @@ msgid ""
 "                            Odoo will propose you to merge only those having\n"
 "                            all these fields in common. (not one of the fields)."
 msgstr ""
-"Seleziona l’elenco di campi per cercare\n"
-"                             i record duplicati. Se selezioni più campi,\n"
-"                             Odoo ti proporrà di unire solo quelli che hanno\n"
-"                             tutti questi campi in comune. (non uno dei campi)."
+"Selezionare l'elenco dei campi utilizzati per\n"
+"                            la ricerca di record duplicati. Se viene selezionato\n"
+"                            più di un contatto, Odoo proporrà di unire solo quelli\n"
+"                            che hanno in comune tutti questi campi. (non solo uno)."
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields__selectable
@@ -24431,9 +24447,9 @@ msgid ""
 "                                You can remove contacts from this list to avoid merging them."
 msgstr ""
 "I contatti selezionati verranno uniti insieme.\n"
-"                                 Tutti i documenti collegati a uno di questi contatti\n"
-"                                 saranno reindirizzati al contatto di destinazione.\n"
-"                                 Puoi rimuovere i contatti da questo elenco per evitare di unirli."
+"                                Tutti i documenti collegati a uno di questi contatti\n"
+"                                verranno reindirizzati a quello di destinazione.\n"
+"                                Per evitarne l'unione, è possibile rimuovere contatti dall'elenco."
 
 #. module: base
 #: code:addons/base/models/ir_qweb_fields.py:0
@@ -25167,7 +25183,7 @@ msgstr "Codice stato"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_country_state__name
 msgid "State Name"
-msgstr "Nome stato"
+msgstr "Nome provincia"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_country__state_required
@@ -25364,8 +25380,7 @@ msgstr "Sottomenù"
 #: model:ir.module.module,summary:base.module_hr_expense
 #: model:ir.module.module,summary:base.module_hr_payroll_expense
 msgid "Submit, validate and reinvoice employee expenses"
-msgstr ""
-"Presentazione, conferma e rifatturazione delle note spese dei dipendenti"
+msgstr "Presentazione, conferma e rifatturazione delle spese dei dipendenti"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_sales_subscription
@@ -25634,7 +25649,7 @@ msgstr "Modello obiettivo"
 #: model:ir.model.fields,field_description:base.field_ir_actions_server__crud_model_name
 #: model:ir.model.fields,field_description:base.field_ir_cron__crud_model_name
 msgid "Target Model Name"
-msgstr ""
+msgstr "Nome modello obiettivo"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_window__target
@@ -26088,6 +26103,12 @@ msgid "The internal user in charge of this contact."
 msgstr "L'utente interno responsabile di questo contatto. "
 
 #. module: base
+#: code:addons/base/models/res_country.py:106
+#, python-format
+msgid "The layout contains an invalid format key"
+msgstr "Lo schema contiene una chiave di formato non valido"
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_model__inherited_model_ids
 msgid "The list of models that extends the current model."
 msgstr "L'elenco dei modelli che estende il modello attuale."
@@ -26255,6 +26276,13 @@ msgid ""
 "Fields:\n"
 "%(fields_list)s"
 msgstr ""
+"Impossibile completare l'operazione richiesta a causa di restrizioni di sicurezza.\n"
+"\n"
+"Tipo di documento: %(document_kind)s (%(document_model)s)\n"
+"Operazione: %(operation)s\n"
+"Utente: %(user)s\n"
+"Campi:\n"
+"%(fields_list)s"
 
 #. module: base
 #: model:ir.model.constraint,message:base.constraint_res_currency_rounding_gt_zero
@@ -26374,7 +26402,7 @@ msgstr "Negozio temi"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "There are no more contacts to merge for this request"
-msgstr "Nessun altro contatto da unire in relazione alla richiesta"
+msgstr "Nessun altro contatto da unire per la richiesta"
 
 #. module: base
 #: code:addons/base/models/ir_filters.py:0
@@ -26435,7 +26463,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_ui_view__arch_db
 msgid "This field stores the view arch."
-msgstr ""
+msgstr "Il campo memorizza l'architettura della vista."
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_ui_view__arch_prev
@@ -26520,7 +26548,7 @@ msgstr ""
 #: code:addons/base/models/res_users.py:0
 #, python-format
 msgid "This method can only be accessed over HTTP"
-msgstr ""
+msgstr "È possibile accedere al metodo solo via HTTP"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mail_bot_hr
@@ -26623,6 +26651,9 @@ msgid ""
 "This module ensure that data (such as analytic accounts) defined on the sale"
 " order via timesheet app are correctly set also on subscriptions"
 msgstr ""
+"Il modulo garantisce che i dati (come i conti analitici) indicati "
+"nell'ordine di vendita tramite l'applicazione foglio ore siano impostati "
+"correttamente anche nelle sottoscrizioni."
 
 #. module: base
 #: model:ir.module.module,description:base.module_sale_subscription_taxcloud
@@ -26691,6 +26722,8 @@ msgid ""
 "This restriction is due to the following rules:\n"
 "%s"
 msgstr ""
+"La restrizione è causata dalle seguenti regole:\n"
+"%s"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_lang__thousands_sep
@@ -27801,7 +27834,7 @@ msgstr "Utente:"
 #: code:addons/base/models/ir_rule.py:0
 #, python-format
 msgid "User: %s"
-msgstr ""
+msgstr "Utente: %s"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server__smtp_user
@@ -29338,7 +29371,7 @@ msgstr "res.users.apikeys.show"
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "second"
-msgstr ""
+msgstr "secondo"
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_model_fields__ttype__selection

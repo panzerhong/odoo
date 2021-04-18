@@ -11,8 +11,8 @@
 # Martin Trigaux, 2021
 # matjaz k <matjaz@mentis.si>, 2021
 # Boris Kodelja <boris@hbs.si>, 2021
-# Jasmina Macur <jasmina@hbs.si>, 2021
 # Matjaz Mozetic <m.mozetic@matmoz.si>, 2021
+# Jasmina Macur <jasmina@hbs.si>, 2021
 # Tadej Lupšina <tadej@hbs.si>, 2021
 # 
 msgid ""
@@ -780,7 +780,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Are you sure you want to perform the following update on those"
-msgstr ""
+msgstr "Ali ste prepričani, da želite izvesti naslednjo posodobitev na"
 
 #. module: web
 #. openerp-web
@@ -1089,7 +1089,7 @@ msgstr "Zaključi"
 #. module: web
 #: model_terms:ir.ui.view,arch_db:web.view_base_document_layout
 msgid "Colors"
-msgstr ""
+msgstr "Barve"
 
 #. module: web
 #. openerp-web
@@ -3447,7 +3447,7 @@ msgstr "Noga poročila"
 #. module: web
 #: model:ir.model.fields,field_description:web.field_base_document_layout__report_layout_id
 msgid "Report Layout"
-msgstr ""
+msgstr "Postavitev poročila"
 
 #. module: web
 #. openerp-web
@@ -3861,7 +3861,7 @@ msgstr "Podpora"
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Switch to this company"
-msgstr ""
+msgstr "Preklopi na to podjetje"
 
 #. module: web
 #. openerp-web
@@ -4816,7 +4816,7 @@ msgstr "je"
 #: code:addons/web/static/src/js/control_panel/search_utils.js:0
 #, python-format
 msgid "is after"
-msgstr ""
+msgstr "je po"
 
 #. module: web
 #. openerp-web
@@ -4824,7 +4824,7 @@ msgstr ""
 #: code:addons/web/static/src/js/control_panel/search_utils.js:0
 #, python-format
 msgid "is after or equal to"
-msgstr ""
+msgstr "je po ali enako"
 
 #. module: web
 #. openerp-web
@@ -4832,7 +4832,7 @@ msgstr ""
 #: code:addons/web/static/src/js/control_panel/search_utils.js:0
 #, python-format
 msgid "is before"
-msgstr ""
+msgstr "je pred"
 
 #. module: web
 #. openerp-web
@@ -4840,7 +4840,7 @@ msgstr ""
 #: code:addons/web/static/src/js/control_panel/search_utils.js:0
 #, python-format
 msgid "is before or equal to"
-msgstr ""
+msgstr "je pred ali enako"
 
 #. module: web
 #. openerp-web
@@ -4848,7 +4848,7 @@ msgstr ""
 #: code:addons/web/static/src/js/control_panel/search_utils.js:0
 #, python-format
 msgid "is between"
-msgstr ""
+msgstr "je med"
 
 #. module: web
 #. openerp-web
@@ -5021,7 +5021,7 @@ msgstr "zapis(ov)"
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "records ?"
-msgstr ""
+msgstr "zapisih?"
 
 #. module: web
 #. openerp-web

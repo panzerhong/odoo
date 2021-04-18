@@ -7,7 +7,7 @@
 # Martin Trigaux, 2020
 # Helen Sulaoja <helen@avalah.ee>, 2020
 # Algo Kärp <algokarp@gmail.com>, 2020
-# atriine <triine@avalah.ee>, 2021
+# Triine Aavik <triine@avalah.ee>, 2021
 # Eneli Õigus <enelioigus@gmail.com>, 2021
 # Piia Paurson <piia@avalah.ee>, 2021
 # 
@@ -34,7 +34,7 @@ msgstr ""
 #: code:addons/sale_coupon/models/coupon.py:0
 #, python-format
 msgid "A Coupon is already applied for the same reward"
-msgstr ""
+msgstr "Selle soodustuse saamiseks on kupong juba rakendatud"
 
 #. module: sale_coupon
 #: code:addons/sale_coupon/models/coupon.py:0
@@ -43,6 +43,8 @@ msgstr ""
 msgid ""
 "A minimum of %(amount)s %(currency)s should be purchased to get the reward"
 msgstr ""
+"Ost peab olema minimaalselt summas %(amount)s %(currency)s soodustuse "
+"saamiseks"
 
 #. module: sale_coupon
 #: model:ir.model.fields,field_description:sale_coupon.field_sale_order__applied_coupon_ids
@@ -122,7 +124,7 @@ msgstr "Loodud"
 #: code:addons/sale_coupon/models/sale_order.py:0
 #, python-format
 msgid "Discount: %(program)s - On product with following taxes: %(taxes)s"
-msgstr "Allahindlus: %(program)s - Järgmiste maksudega tootel: %(taxes)s"
+msgstr "Allahindlus: %(program)s - %(taxes)s maksuga toodetel"
 
 #. module: sale_coupon
 #: code:addons/sale_coupon/models/sale_order.py:0
