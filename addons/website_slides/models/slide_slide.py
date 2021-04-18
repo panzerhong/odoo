@@ -232,7 +232,13 @@ class Slide(models.Model):
     @api.depends('slide_partner_ids.vote')
     @api.depends_context('uid')
     def _compute_user_info(self):
-        slide_data = dict.fromkeys(self.ids, dict({'likes': 0, 'dislikes': 0, 'user_vote': False}))
+        default_stats = {'likes': 0, 'dislikes': 0, 'user_vote': False}
+
+        if not self.ids:
+            self.update(default_stats)
+            return
+
+        slide_data = dict.fromkeys(self.ids, default_stats)
         slide_partners = self.env['slide.slide.partner'].sudo().search([
             ('slide_id', 'in', self.ids)
         ])
@@ -464,9 +470,9 @@ class Slide(models.Model):
             }
         return super(Slide, self).get_access_action(access_uid)
 
-    def _notify_get_groups(self):
+    def _notify_get_groups(self, msg_vals=None):
         """ Add access button to everyone if the document is active. """
-        groups = super(Slide, self)._notify_get_groups()
+        groups = super(Slide, self)._notify_get_groups(msg_vals=msg_vals)
 
         if self.website_published:
             for group_name, group_method, group_data in groups:

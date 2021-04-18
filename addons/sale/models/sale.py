@@ -597,6 +597,27 @@ class SaleOrder(models.Model):
     def _get_invoice_grouping_keys(self):
         return ['company_id', 'partner_id', 'currency_id']
 
+    def _get_invoiceable_lines(self, final=False):
+        """Return the invoiceable lines for order `self`."""
+        invoiceable_line_ids = []
+        pending_section = None
+        precision = self.env['decimal.precision'].precision_get('Product Unit of Measure')
+
+        for line in self.order_line:
+            if line.display_type == 'line_section':
+                # Only invoice the section if one of its lines is invoiceable
+                pending_section = line
+                continue
+            if line.display_type != 'line_note' and float_is_zero(line.qty_to_invoice, precision_digits=precision):
+                continue
+            if line.qty_to_invoice > 0 or (line.qty_to_invoice < 0 and final) or line.display_type == 'line_note':
+                if pending_section:
+                    invoiceable_line_ids.append(pending_section.id)
+                    pending_section = None
+                invoiceable_line_ids.append(line.id)
+
+        return self.env['sale.order.line'].browse(invoiceable_line_ids)
+
     def _create_invoices(self, grouped=False, final=False):
         """
         Create the invoice associated to the SO.
@@ -612,31 +633,23 @@ class SaleOrder(models.Model):
             except AccessError:
                 return self.env['account.move']
 
-        precision = self.env['decimal.precision'].precision_get('Product Unit of Measure')
-
         # 1) Create invoices.
         invoice_vals_list = []
         for order in self:
-            pending_section = None
 
-            # Invoice values.
             invoice_vals = order._prepare_invoice()
+            invoiceable_lines = order._get_invoiceable_lines(final)
 
-            # Invoice line values (keep only necessary sections).
-            for line in order.order_line:
-                if line.display_type == 'line_section':
-                    pending_section = line
-                    continue
-                if line.display_type != 'line_note' and float_is_zero(line.qty_to_invoice, precision_digits=precision):
-                    continue
-                if line.qty_to_invoice > 0 or (line.qty_to_invoice < 0 and final) or line.display_type == 'line_note':
-                    if pending_section:
-                        invoice_vals['invoice_line_ids'].append((0, 0, pending_section._prepare_invoice_line()))
-                        pending_section = None
-                    invoice_vals['invoice_line_ids'].append((0, 0, line._prepare_invoice_line()))
-
-            if not invoice_vals['invoice_line_ids']:
+            if not invoiceable_lines and not invoice_vals['invoice_line_ids']:
                 raise UserError(_('There is no invoiceable line. If a product has a Delivered quantities invoicing policy, please make sure that a quantity has been delivered.'))
+
+            # there is a chance the invoice_vals['invoice_line_ids'] already contains data when
+            # another module extends the method `_prepare_invoice()`. Therefore, instead of
+            # replacing the invoice_vals['invoice_line_ids'], we append invoiceable lines into it
+            invoice_vals['invoice_line_ids'] += [
+                (0, 0, line._prepare_invoice_line())
+                for line in invoiceable_lines
+            ]
 
             invoice_vals_list.append(invoice_vals)
 
@@ -886,11 +899,11 @@ class SaleOrder(models.Model):
         transaction = self.get_portal_last_transaction()
         return (self.state == 'sent' or (self.state == 'draft' and include_draft)) and not self.is_expired and self.require_payment and transaction.state != 'done' and self.amount_total
 
-    def _notify_get_groups(self):
+    def _notify_get_groups(self, msg_vals=None):
         """ Give access button to users and portal customer as portal is integrated
         in sale. Customer and portal group have probably no right to see
         the document so they don't have the access button. """
-        groups = super(SaleOrder, self)._notify_get_groups()
+        groups = super(SaleOrder, self)._notify_get_groups(msg_vals=msg_vals)
 
         self.ensure_one()
         if self.state not in ('draft', 'cancel'):
@@ -1442,18 +1455,16 @@ class SaleOrderLine(models.Model):
                 # amount and not zero. Since we compute untaxed amount, we can use directly the price
                 # reduce (to include discount) without using `compute_all()` method on taxes.
                 price_subtotal = 0.0
-                if line.product_id.invoice_policy == 'delivery':
-                    price_subtotal = line.price_reduce * line.qty_delivered
-                else:
-                    price_subtotal = line.price_reduce * line.product_uom_qty
+                umo_qty_to_consider = line.qty_delivered if line.product_id.invoice_policy == 'delivery' else line.product_uom_qty
+                price_subtotal = line.price_reduce * umo_qty_to_consider
                 if len(line.tax_id.filtered(lambda tax: tax.price_include)) > 0:
                     # As included taxes are not excluded from the computed subtotal, `compute_all()` method
                     # has to be called to retrieve the subtotal without them.
                     # `price_reduce_taxexcl` cannot be used as it is computed from `price_subtotal` field. (see upper Note)
                     price_subtotal = line.tax_id.compute_all(
-                        price_subtotal,
+                        line.price_reduce,
                         currency=line.order_id.currency_id,
-                        quantity=line.product_uom_qty,
+                        quantity=umo_qty_to_consider,
                         product=line.product_id,
                         partner=line.order_id.partner_shipping_id)['total_excluded']
 
