@@ -10,9 +10,9 @@
 # Jan Horzinka <jan.horzinka@centrum.cz>, 2018
 # Michal Veselý <michal@veselyberanek.net>, 2018
 # Jakub Snášel <jakub@potisk-tricek.cz>, 2019
-# trendspotter, 2020
 # Rastislav Brencic <rastislav.brencic@azet.sk>, 2020
 # karolína schusterová <karolina.schusterova@vdp.sk>, 2021
+# trendspotter, 2021
 # 
 msgid ""
 msgstr ""
@@ -20,7 +20,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-14 07:33+0000\n"
 "PO-Revision-Date: 2018-08-24 09:22+0000\n"
-"Last-Translator: karolína schusterová <karolina.schusterova@vdp.sk>, 2021\n"
+"Last-Translator: trendspotter, 2021\n"
 "Language-Team: Czech (https://www.transifex.com/odoo/teams/41243/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -460,7 +460,7 @@ msgstr ""
 #. module: point_of_sale
 #: model:ir.actions.act_window,name:point_of_sale.action_pos_all_sales_lines
 msgid "All sales lines"
-msgstr ""
+msgstr "Všechny prodejní řádky"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_config_view_form
@@ -994,7 +994,7 @@ msgstr "Konfigurace"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_config_view_form
 msgid "Configuration for journal entries of PoS orders"
-msgstr ""
+msgstr "Konfigurace záznamů deníku objednávek Místa Prodeje"
 
 #. module: point_of_sale
 #: model_terms:ir.actions.act_window,help:point_of_sale.action_pos_config_kanban
@@ -1223,7 +1223,7 @@ msgstr "Výchozí daň na výstupu"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
 msgid "Default Sales Tax"
-msgstr ""
+msgstr "Výchozí daň z obratu"
 
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.customer_facing_display_snippets
@@ -1233,7 +1233,7 @@ msgstr "Výchozí logo společnosti"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.res_config_settings_view_form
 msgid "Default sales tax for products"
-msgstr ""
+msgstr "Výchozí daň z obratu pro produkty"
 
 #. module: point_of_sale
 #: model_terms:ir.actions.act_window,help:point_of_sale.product_pos_category_action
@@ -1360,7 +1360,7 @@ msgstr "Sleva"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.report_saledetails
 msgid "Disc:"
-msgstr ""
+msgstr "Zřeknutí se odpovědnosti:"
 
 #. module: point_of_sale
 #. openerp-web
@@ -1629,7 +1629,7 @@ msgstr "Další informace"
 #: code:addons/point_of_sale/static/src/xml/pos.xml:1211
 #, python-format
 msgid "Finished Importing Orders"
-msgstr ""
+msgstr "Dokončené importování objednávek"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_order__fiscal_position_id
@@ -1640,7 +1640,7 @@ msgstr "Daňová pozice"
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_config_view_form
 msgid "Fiscal Position per Order"
-msgstr ""
+msgstr "Fiskální pozice na objednávku"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_config__fiscal_position_ids
@@ -1918,7 +1918,7 @@ msgstr "Je bar / restaurace"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_config__is_installed_account_accountant
 msgid "Is the Full Accounting Installed"
-msgstr ""
+msgstr "Je nainstalováno úplné účetnictví"
 
 #. module: point_of_sale
 #: model:ir.model.fields,help:point_of_sale.field_account_bank_statement__account_id
@@ -2137,6 +2137,8 @@ msgid ""
 "Make sure you are using IoT Box v18.12 or higher. Navigate to %s to accept "
 "the certificate of your IoT Box."
 msgstr ""
+"Ujistěte se, že používáte IoT Box v18.12 nebo vyšší. Přejděte na %s a "
+"přijměte certifikát vašeho IoT Boxu."
 
 #. module: point_of_sale
 #: model:res.groups,name:point_of_sale.group_pos_manager
@@ -2274,7 +2276,7 @@ msgstr ""
 #. module: point_of_sale
 #: model_terms:ir.actions.act_window,help:point_of_sale.action_pos_pos_form
 msgid "No orders found"
-msgstr ""
+msgstr "Nebyly nalezeny žádné objednávky"
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/models/pos_session.py:192
@@ -3215,7 +3217,7 @@ msgstr "Ceny produktů na účtenkách"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_config__iface_tipproduct
 msgid "Product tips"
-msgstr ""
+msgstr "Tipy k produktu"
 
 #. module: point_of_sale
 #: model:ir.actions.act_window,name:point_of_sale.product_template_action_pos_product
@@ -3300,7 +3302,7 @@ msgstr ""
 #. module: point_of_sale
 #: model_terms:ir.ui.view,arch_db:point_of_sale.pos_config_view_form
 msgid "Receipt Printer"
-msgstr ""
+msgstr "Tiskárna účtenek"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_order__pos_reference
@@ -3729,6 +3731,9 @@ msgid ""
 "errors. You can exit the Point of Sale, but do not close the session before "
 "the issue has been resolved."
 msgstr ""
+"Některé objednávky nebylo možné odeslat na server kvůli chybám konfigurace. "
+"Můžete opustit prodejní místo, ale relaci nezavírejte, dokud nebude problém "
+"vyřešen."
 
 #. module: point_of_sale
 #. openerp-web
@@ -3819,7 +3824,7 @@ msgstr "Mezisoučet bez daně"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_report_pos_order__price_sub_total
 msgid "Subtotal w/o discount"
-msgstr ""
+msgstr "Mezisoučet bez slevy"
 
 #. module: point_of_sale
 #. openerp-web
@@ -4017,7 +4022,7 @@ msgstr ""
 #, python-format
 msgid ""
 "The invoice journal and the point of sale must belong to the same company."
-msgstr ""
+msgstr "Deník faktur a prodejní místo musí patřit stejné společnosti."
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/models/pos_config.py:248
@@ -4296,6 +4301,8 @@ msgid ""
 "This field is there to pass the id of the pos manager group to the point of "
 "sale client."
 msgstr ""
+"Toto pole slouží k předání ID skupiny správců Místa Prodeje klientovi v "
+"místě prodeje."
 
 #. module: point_of_sale
 #: model:ir.model.fields,help:point_of_sale.field_pos_config__group_pos_user_id
