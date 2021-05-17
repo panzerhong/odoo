@@ -10791,6 +10791,7 @@ msgid ""
 "The application scope of taxes in a group must be either the same as the "
 "group or left empty."
 msgstr ""
+"Rakenduse maksude määr grupis peab olema kas grupiga sama suur või tühi."
 
 #. module: account
 #: code:addons/account/models/account.py:0
@@ -11840,7 +11841,7 @@ msgstr "Tüübi nimi"
 #: model:ir.model.fields,help:account.field_account_move__activity_exception_decoration
 #: model:ir.model.fields,help:account.field_account_payment__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Kirjel oleva erandtegevuse tüüp."
 
 #. module: account
 #: model:ir.model.fields.selection,name:account.selection__account_cash_rounding__rounding_method__up
@@ -12360,7 +12361,7 @@ msgstr "Vale kreedit- või deebetväärtus raamatupidamiskirjendil!"
 #: code:addons/account/models/account_move.py:0
 #, python-format
 msgid "You are trying to reconcile some entries that are already reconciled."
-msgstr ""
+msgstr "Te üritate sobitada kirjeid, mis on juba omavahel ühendatud."
 
 #. module: account
 #: model:ir.model.fields,help:account.field_account_move_line__blocked
@@ -12441,7 +12442,7 @@ msgstr "Saate registreerida ainult avatud arvete makseid"
 #: code:addons/account/wizard/account_invoice_send.py:0
 #, python-format
 msgid "You can only send invoices."
-msgstr ""
+msgstr "Te saate ainult saata arveid."
 
 #. module: account
 #: code:addons/account/wizard/account_payment_send.py:0

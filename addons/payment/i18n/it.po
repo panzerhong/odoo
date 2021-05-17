@@ -841,7 +841,7 @@ msgstr "Dal"
 #. module: payment
 #: model_terms:ir.ui.view,arch_db:payment.payment_link_wizard_view_form
 msgid "Generate Payment Link"
-msgstr ""
+msgstr "Generazione link di pagamento"
 
 #. module: payment
 #: model:ir.model,name:payment.model_payment_link_wizard
@@ -1784,6 +1784,8 @@ msgid ""
 "The transaction %s with %s for %s has return failed with the following error"
 " message: %s"
 msgstr ""
+"La transazione %s con %s per %s ha restituito un errore con il seguente "
+"messaggio: %s"
 
 #. module: payment
 #: code:addons/payment/models/payment_acquirer.py:0
@@ -1822,10 +1824,10 @@ msgid ""
 " invoicing), you need it to automatically charge the customer when you issue"
 " an invoice."
 msgstr ""
-"Questa opzione consente ai clienti di salvare le carte di credito come "
-"token, per riutilizzarlo in pagamenti successivi. Se vengono gestite "
-"sottoscrizioni (fatture ricorrenti) è necessario addebitare automaticamente "
-"al cliente dopo l'emissione della fattura."
+"L'opzione consente ai clienti di salvare le carte di credito come token, per"
+" riutilizzarli in pagamenti successivi. Se vengono gestiti abbonamenti "
+"(fatture ricorrenti) è necessario l'addebito automatico al cliente dopo "
+"l'emissione della fattura."
 
 #. module: payment
 #: model:ir.model.fields,help:payment.field_payment_acquirer__country_ids
